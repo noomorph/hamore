@@ -1,0 +1,34 @@
+{
+  "name": "ha-More",
+  "description": "Your personal Hebrew teacher in the pocket and the web",
+  "launch_path": "/",
+  "version": "1.0",
+  "icons": {
+    "32": "img/icon-32.png",
+    "57": "img/icon-57.png",
+    "72": "img/icon-72.png",
+    "114": "img/icon-114.png",
+    "144": "img/icon-144.png"
+  },
+  "developer": {
+    "name": "Yaroslav Serhieiev",
+    "url": "http://noomorph.github.io"
+  },
+  "appcache_path": "/cache.manifest",
+  "locales": {
+    "ru": {
+      "description": "Твой личный учитель иврита прямо в кармане и в вебе тоже!..",
+      "developer": {
+          "url": "http://noomorph.github.io"
+      }
+    }
+  },
+  "default_locale": "ru",
+  "screen_size": {
+    "min_width": "320",
+    "min_height": "480"
+  },
+  "required_features": [],
+  "permissions": {},
+  "fullscreen": "true"
+}
