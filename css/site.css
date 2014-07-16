@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body, input {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Segoe WP', 'Helvetica Neue', 'Roboto';
+}
+
+.chapter-selection {
+    display: table;
+    width: 100%;
+    padding: 5px;
+    background: #fa0;
+    color: #000;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.chapter-selection > div,
+.message-box > div,
+.message-box > input {
+    display: table-cell;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+.hamore-avatar {
+    background-image: url(/img/avatar-hamore.png);
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.chapter-title {
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+.chapter-arrow {
+    background-image: url(/img/util-dropdown.png);
+    background-size: contain;
+    background-position: center;
+    width: 35px;
+}
+
+.chat-box {
+    padding-top: 2em 0;
+}
+
+.chat-bubble {
+    background: #ddd;
+    margin: 5px 0;
+    padding: 0.4em 0.5em;
+    max-width: 70%;
+    clear: both;
+    margin-top: -10px;
+}
+
+.chat-bubble:first-child {
+    margin-top: 0.75em;
+}
+
+.chat-bubble.from-more {
+    float: left;
+    background: #ffd37a;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-bubble.from-you {
+    float: right;
+    background: #9e9;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.message-box {
+    display: table;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    border-top: solid #ccc 1px;
+    background: #eee;
+}
+
+.message-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    line-height: 1.75em;
+    direction: rtl;
+    padding: 0 0.5em 0 0;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.message-send {
+    width: 37px;
+    height: 37px;
+    background-image: url(/img/util-sendmessage.png);
+    background-size: contain;
+}
+
+div {
+    /* border: solid 1px #000; */
+}

@@ -31,16 +31,6 @@
 		<meta name="msapplication-TileColor" content="#FFF500">
 		<!-- Windows Phone 8 meta (allows for dynamic badges/notifications) -->
 		<meta name="msapplication-badge" content="frequency=30; polling-uri=http://noomorph.github.io/hamore/external/badge.xml">
-		<!-- Windows Phone 8 meta (allows for dynamic badges/notifications) -->
-		<meta name="msApplication-ID" content="haMore" />
-		<!-- Windows Phone 8 meta (Package family created by Microsoft Visual Studio to identify the app) -->
-		<!-- meta name="msApplication-PackageFamilyName" content="" /-->
-		<!-- Windows Phone 8 meta (String that is going to be passed to your app. If we don’t provide this meta information, Internet Explorer will pass the current URL automatically.) -->
-		<!-- meta name="msApplication-Arguments" content="{{ Page.url }}" /-->
-		<!-- Windows Phone 8 meta (Enforces a minimum version of your app. Therefore, if your user has an older version when she tries to switch to the app, she will be first sent to the store to update it) -->
-		<meta name="msApplication-MinVersion" content="1.0.0.0" />
-		<!-- Windows Phone 8 meta (Allow our HTML document to not use the connection on some situations. Possible values are: install that will prevent the installation invitation if it’s not installed, switch that will prevent the switch invitation if the app is installed and both) -->
-		<meta name="msApplication-OptOut" content="both" />
 
 		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
 		<!--
@@ -71,8 +61,26 @@
 		<!-- iPhone 5 and 2012 iPod Touch -->
 		<link rel="apple-touch-startup-image" sizes="640x1096" href="img/startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
         <link rel="canonical" href="http://noomorph.github.io/hamore/" />
+        <!-- stylesheets -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+        <link href="css/site.css" rel="stylesheet" />
     </head>
     <body class="no-js">
-        Hello, world!
+        <div class="chapter-selection">
+            <div class="hamore-avatar"></div>
+            <div class="chapter-title">יהידה 1</div>
+            <div class="chapter-arrow"></div>
+        </div>
+        <div class="chat-box">
+            <div class="chat-bubble from-more">Шалом!</div>
+            <div class="chat-bubble from-you">שלום</div>
+        </div>
+        <div class="message-box">
+            <input class="message-input" type="text" placeholder="כתוב תשובה" />
+            <div style="width: 2px;"></div> <!-- TODO: remove spacer -->
+            <div class="message-send"></div>
+            <div style="width: 2px;"></div> <!-- TODO: remove spacer -->
+        </div>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </body>
 </html>
