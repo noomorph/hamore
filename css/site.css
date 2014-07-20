@@ -100,7 +100,7 @@ body, input {
     margin-top: 0.75em;
 }
 
-.chat-bubble.from-more {
+.chat-bubble[data-sender="more"] {
     float: left;
     background: #ffd37a;
 
@@ -110,7 +110,7 @@ body, input {
     border-bottom-right-radius: 10px;
 }
 
-.chat-bubble.from-you {
+.chat-bubble[data-sender="you"] {
     float: right;
     background: #9e9;
 
@@ -127,4 +127,3 @@ body, input {
     bottom: 0;
     right: 0;
 }
-
