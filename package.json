@@ -1,0 +1,28 @@
+{
+  "name": "hamore",
+  "version": "0.1.0",
+  "description": "ha-More, the virtual teacher of Hebrew",
+  "main": "index.html",
+  "scripts": {
+    "start": "sudo http-server -i 0.0.0.0 -p 80",
+    "test": "karma test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noomorph/hamore"
+  },
+  "keywords": [
+    "hebrew",
+    "webapp",
+    "learning",
+    "html5"
+  ],
+  "author": "Yaroslav Serhieiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noomorph/hamore/issues"
+  },
+  "homepage": "https://github.com/noomorph/hamore",
+  "dependencies": { },
+  "devDependencies": { }
+}
