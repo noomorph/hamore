@@ -88,6 +88,20 @@
             </div>
         </div>
         <div class="chat-box clearfix">
+            <div class="chat-box-messages clearfix">
+            </div>
+
+            <div class="chat-typing" data-sender="you" style="display: none">
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+            </div>
+
+            <div class="chat-typing" data-sender="more" style="display: none">
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+            </div>
         </div>
         <!-- overlay to make input focus easier -->
         <label id="chat-focus-helper" for="message-input"></label>
@@ -97,6 +111,8 @@
         <!-- Handlebars templates -->
         <script src="templates/compiled.js"></script>
         <!-- application code -->
+        <script src="js/view.js"></script>
+        <script src="js/chat.js"></script>
         <script src="js/chatHistory.js"></script>
         <script src="js/app.js"></script>
         <!-- LiveReload -->

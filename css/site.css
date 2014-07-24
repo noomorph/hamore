@@ -86,7 +86,7 @@ body, input {
     margin-top: 112px;
 }
 
-.chat-bubble {
+.chat-bubble, .chat-typing {
     display: block;
     background: #ddd;
     margin: 5px 0;
@@ -100,10 +100,23 @@ body, input {
     margin-top: 0.75em;
 }
 
-.chat-bubble[data-sender="more"] {
+.chat-typing {
+    border-radius: 15px;
+}
+
+.chat-bubble[data-sender="more"],
+.chat-typing[data-sender="more"] {
     float: left;
     background: #ffd37a;
+}
 
+.chat-bubble[data-sender="you"],
+.chat-typing[data-sender="you"] {
+    float: right;
+    background: #9e9;
+}
+
+.chat-bubble[data-sender="more"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border-top-right-radius: 10px;
@@ -111,9 +124,6 @@ body, input {
 }
 
 .chat-bubble[data-sender="you"] {
-    float: right;
-    background: #9e9;
-
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 15px;

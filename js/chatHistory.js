@@ -11,12 +11,6 @@
             this.lastModified = new Date();
             this.messages = [];
         }
-
-        if (this.messages.length > 0) {
-            this._maxId = calculateMaxId(this.messages);
-        } else {
-            this._maxId = 0;
-        }
     }
 
     /* private methods */
@@ -45,9 +39,6 @@
         localStorage.removeItem(HISTORY_ID);
     };
 
-    ChatHistory.prototype.newId = function () {
-        return (++this._maxId);
-    };
 
     ChatHistory.prototype.getMemento = function () {
         return {
@@ -57,21 +48,18 @@
     };
 
     ChatHistory.prototype.appendMessage = function (message) {
-        var lastMessage = {
-            id: this.newId(),
-            timeStamp: new Date(),
-            from: message.from,
-            text: message.text
-        };
+        if (!message) return;
+        if (!message.id) return;
+        if (!message.timeStamp) return;
 
-        this.messages.push(lastMessage);
-        this.lastModified = lastMessage.timeStamp;
+        if (message.timeStamp < this.lastModified) return;
+
+        this.messages.push(message);
+        this.lastModified = message.timeStamp;
 
         if (AUTOSAVE) {
             this.saveSync();
         }
-
-        return lastMessage;
     };
 
     ChatHistory.prototype.saveSync = function () {
