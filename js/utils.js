@@ -39,8 +39,6 @@
         return target;
     }
 
-    debugger;
-
     exports.util = {
         apply: apply,
         formatString: formatString,

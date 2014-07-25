@@ -67,22 +67,19 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
         <link href="css/site.css" rel="stylesheet" />
     </head>
-    <body class="no-js">
+    <body>
         <div class="static-controls">
-            <div class="chapter-selection">
-                <div class="hamore-avatar"></div>
-                <div class="chapter-title">Yehida 1</div>
-                <div class="chapter-arrow">
-                    <select>
-                        <option>Yehida 1</option>
-                        <option>Yehida 2</option>
-                        <option>Yehida 3</option>
-                        <option>Yehida 4</option>
-                        <option>Yehida 5</option>
-                        <option>Yehida 6</option>
-                    </select>
-                </div>
-            </div>
+            <div class="chapter-selection"><!--
+                --><a class="hamore-avatar" href="#"></a><!--
+                --><select>
+                    <option>Yehida 1</option>
+                    <option>Yehida 2</option>
+                    <option>Yehida 3</option>
+                    <option>Yehida 4</option>
+                    <option>Yehida 5</option>
+                    <option>Yehida 6</option>
+                </select><!-- 
+            --></div>
             <div class="message-box">
                 <input id="message-input" type="text" placeholder="Ktov Tshuva"/>
             </div>
@@ -105,7 +102,14 @@
         </div>
         <!-- overlay to make input focus easier -->
         <label id="chat-focus-helper" for="message-input"></label>
+        <!-- app logo for WP7/8 screen -->
+        <a id="hamore-logo" style="display: none"></a>
 
+        <script>
+            window.onerror = function (e) {
+                alert(JSON.stringify(e));
+            };
+        </script>
         <!-- vendor scripts -->
         <script src="bower_components/handlebars/handlebars.runtime.js"></script>
         <!-- Handlebars templates -->
@@ -113,6 +117,7 @@
         <!-- application code -->
         <script src="js/utils.js"></script>
         <script src="js/publisher.js"></script>
+        <script src="js/hamore.js"></script>
         <script src="js/view.js"></script>
         <script src="js/chat.js"></script>
         <script src="js/chatHistory.js"></script>

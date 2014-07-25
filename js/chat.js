@@ -15,6 +15,7 @@
         this._maxId = 0;
 
         this.registerEvents([
+            'clear',
             'load',
             'newMessage',
             'startTyping',
@@ -43,6 +44,25 @@
 
         this._maxId = calculateMaxId(chatHistory.messages);
         this.messages = chatHistory.messages;
+        this.chatHistory = chatHistory;
+
+        this.trigger('load', {
+            messages: this.messages
+        });
+
+        this.on('clear', function (e) {
+            chatHistory.clear();
+        });
+
+        this.on('newMessage', function (e) {
+            chatHistory.appendMessage(e.message);
+        });
+    };
+
+    Chat.prototype.clear = function () {
+        this.messages = [];
+
+        this.trigger('clear', {});
 
         this.trigger('load', {
             messages: this.messages

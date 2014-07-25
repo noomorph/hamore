@@ -67,5 +67,14 @@
         localStorage.setItem(HISTORY_ID, raw);
     };
 
+    ChatHistory.prototype.subscribeToChat = function (chat) {
+        var self = this;
+
+        chat.on('newMessage', function (e) {
+            self.appendMessage(e.message);
+            console.log("Message sent to history: ", e.message);
+        });
+    };
+
     exports.ChatHistory = ChatHistory;
 })(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
