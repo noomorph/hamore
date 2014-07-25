@@ -1,3 +1,4 @@
+/*global app*/
 (function (exports) {
 
     var ERRORS = {
@@ -13,37 +14,18 @@
 
         this._maxId = 0;
 
-        this._subscribers = {
-            'load': [],
-            'newMessage': [],
-            'startTyping': [],
-            'stopTyping': []
-        };
+        this.registerEvents([
+            'load',
+            'newMessage',
+            'startTyping',
+            'stopTyping'
+        ]);
     }
+
+    app.util.apply(Chat.prototype, app.Publisher.prototype);
 
     Chat.prototype.newId = function () {
         return (++this._maxId);
-    };
-
-    Chat.prototype.on = function (eventName, callback) {
-        this._subscribers[eventName].push(callback);
-        return this;
-    };
-
-    Chat.prototype.off = function (eventName, callback) {
-        var index = this._subscribers[eventName].indexOf(callback);
-        if (index >= 0) {
-            this._subscribers.splice(index, 1);
-        }
-        
-        return this;
-    };
-
-    Chat.prototype.trigger = function (eventName, eventObject) {
-        this._subscribers[eventName].forEach(function (callback) {
-            var clone = JSON.parse(JSON.stringify(eventObject));
-            callback(clone);
-        });
     };
 
     Chat.prototype.loadHistory = function (chatHistory) {
@@ -97,11 +79,11 @@
 
     Chat.prototype.register = function (login) {
         if (!login) {
-            app.raiseError(ERRORS.NO_MEMBER_LOGIN);
+            app.util.raiseError(ERRORS.NO_MEMBER_LOGIN);
         }
 
         if (this.members.hasOwnProperty(login)) {
-            app.raiseError(ERRORS.ALREADY_REGISTERED, login);
+            app.util.raiseError(ERRORS.ALREADY_REGISTERED, login);
         }
 
         var chat = this;
