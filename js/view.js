@@ -14,6 +14,8 @@
         this.container = container;
 
         this.els = {
+            header: $(".static-controls"),
+            chatBox: $(".chat-box"),
             chapterSelect: $("select"),
             messages: $(".chat-box-messages"),
             typing: function (login) {
@@ -38,6 +40,10 @@
     View.prototype.checkDirection = function (message) {
         var rtl;
 
+        if (!message) {
+            return "rtl";
+        }
+
         if (typeof message === "string") {
             rtl = /[\u05D0-\u05F4]/.test(message);
         } else {
@@ -46,10 +52,6 @@
         }
 
         return rtl ? "rtl" : "ltr";
-    };
-
-    View.prototype.scrollToBottom = function () {
-        window.scrollTo(0, document.body.scrollHeight);
     };
 
     View.prototype.loadMessages = function (messages) {
@@ -61,21 +63,18 @@
             messages: messages
         });
 
-
         show(this.els.messages);
+
         this.scrollToBottom();
     };
 
     View.prototype.appendMessage = function (message) {
-        hide(this.els.messages);
-
         this.checkDirection(message);
 
         this.els.messages.innerHTML += Handlebars.templates.chatBubbles({
             messages: [message]
         });
 
-        show(this.els.messages);
         this.scrollToBottom();
     };
 
@@ -85,6 +84,25 @@
 
     View.prototype.stopTyping = function (login) {
         hide(this.els.typing(login));
+    };
+
+    View.prototype.scrollToBottom = function () {
+        // var msg = document.querySelector(".chat-bubble:last-child");
+        // if (msg) {
+        //     location.hash = msg.getAttribute("name");
+        //     this.els.input.focus();
+        // }
+
+        this.els.chatBox.scrollTop = this.els.chatBox.scrollHeight;
+    };
+
+    View.prototype.fixRTL = function () {
+        var input = this.els.input,
+        currentDir = this.checkDirection(input.value);
+
+        if (input.dir !== currentDir) {
+            input.dir = currentDir;
+        }
     };
 
     View.prototype.attachListeners = function (chat) {
@@ -105,18 +123,15 @@
             e.preventDefault();
         });
 
+        this.els.input.addEventListener('focus', this.fixRTL.bind(this));
+        this.els.input.addEventListener('keydown', this.fixRTL.bind(this));
+
         this.els.input.addEventListener('keydown', function (e) {
-            var input = self.els.input,
-                currentDir = self.checkDirection(input.value);
+            var input = self.els.input;
 
-            if (input.dir !== currentDir) {
-                input.dir = currentDir;
-            }
-
-            if (e.which === 13) {
+            if (e.which === 13 && input.value) {
                 you.sendMessage(input.value);
                 input.value = "";
-
                 e.preventDefault();
                 return false;
             }
