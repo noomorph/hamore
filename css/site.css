@@ -6,13 +6,22 @@ a {
     -ms-touch-action:none
 }
 
-body, input, select {
+body {
+    -ms-touch-action:none;
+}
+body, input, select, ul {
     margin: 0;
     padding: 0;
+    border: 0;
     font-size: 20px;
     font-weight: 100;
     font-family: 'Segoe WP', 'Helvetica Neue', 'Roboto';
 }
+
+ul {
+    list-style: none;
+}
+
 
 input {
     -webkit-appearance: none;
@@ -49,6 +58,7 @@ select::-ms-expand {
     left: 0;
     top: 0;
     right: 0;
+    overflow-x: hidden;
 }
 
 .chapter-selection {
@@ -115,12 +125,12 @@ select::-ms-expand {
 
 .chat-box {
     position: absolute;
-    top: 112px;
+    top: 104px;
     left: 0;
-    right: 0;
+    width: 100%;
+    min-height: 2em;
     bottom: 0;
-    overflow-y: scroll;
-    padding-bottom: 80%;
+    overflow: hidden;
 }
 
 .chat-bubble, .chat-typing {

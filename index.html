@@ -82,40 +82,24 @@
             --><i class="chapter-arrow"></i><!--
             --></div>
             <div class="message-box">
-                <input id="message-input" type="text" placeholder="&#x05db;&#x05ea;&#x05d5;&#x05d1; &#x05ea;&#x05e9;&#x05d5;&#x05d1;&#x05d4;" dir="rtl"/>
+                <input id="message-input" type="text" placeholder="&#x05db;&#x05ea;&#x05d5;&#x05d1; &#x05ea;&#x05e9;&#x05d5;&#x05d1;&#x05d4;" dir="rtl" autocomplete="off"/>
             </div>
         </div>
         <div class="chat-box clearfix">
-            <div class="chat-box-messages clearfix">
-            </div>
-
-            <div class="chat-typing" data-sender="you" style="display: none">
-                <span>.</span>
-                <span>.</span>
-                <span>.</span>
-            </div>
-
-            <div class="chat-typing" data-sender="more" style="display: none">
-                <span>.</span>
-                <span>.</span>
-                <span>.</span>
-            </div>
+            <ul class="chat-box-messages clearfix">
+            </ul>
         </div>
         <!-- app logo for WP7/8 screen -->
         <a id="hamore-logo" style="display: none"></a>
 
-        <script>
-            window.onerror = function (e) {
-                alert(JSON.stringify(e));
-            };
-        </script>
         <!-- vendor scripts -->
         <script src="bower_components/handlebars/handlebars.runtime.js"></script>
+        <script src="bower_components/iscroll/build/iscroll.js"></script>
         <!-- Handlebars templates -->
         <script src="templates/compiled.js"></script>
         <!-- application code -->
-        <script src="js/utils.js"></script>
-        <script src="js/publisher.js"></script>
+        <script src="js/common/utils.js"></script>
+        <script src="js/common/publisher.js"></script>
         <script src="js/hamore.js"></script>
         <script src="js/view.js"></script>
         <script src="js/chat.js"></script>

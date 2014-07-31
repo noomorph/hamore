@@ -1,10 +1,9 @@
 {{#each messages ~}}
-    <a
-        name="msg-{{id}}"
-        class="chat-bubble"
-        {{#if rtl}}
-            dir="rtl"
-        {{/if}}
-        data-sender="{{from}}"
-    >{{text}}</a>
+    <li class="chat-bubble" data-sender="{{from}}">
+        <a name="msg-{{id}}"
+           {{#if rtl}}
+               dir="rtl"
+           {{/if}}
+        >{{text}}</a>
+    </li>
 {{~/each}}

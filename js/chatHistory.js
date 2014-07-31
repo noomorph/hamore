@@ -13,15 +13,6 @@
         }
     }
 
-    /* private methods */
-    function calculateMaxId(messages) {
-        var ids = messages.map(function (message) {
-            return message.id || 0;
-        });
-
-        return Math.max.apply(null, ids);
-    }
-
     /* class methods */
     ChatHistory.loadSync = function () {
         var memento = localStorage.getItem(HISTORY_ID);
@@ -33,7 +24,6 @@
         return new ChatHistory();
     };
 
-    /* instance methods */
     ChatHistory.prototype.clear = function () {
         ChatHistory.call(this);
         localStorage.removeItem(HISTORY_ID);
@@ -72,7 +62,10 @@
 
         chat.on('newMessage', function (e) {
             self.appendMessage(e.message);
-            console.log("Message sent to history: ", e.message);
+
+            if (app.debug) {
+                console.log("Message sent to history: ", e.message);
+            }
         });
     };
 

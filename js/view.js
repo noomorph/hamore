@@ -1,5 +1,4 @@
 (function (exports) {
-
     function View(container, chat) {
         function $(selector) {
             if (typeof selector === "string") {
@@ -15,7 +14,7 @@
 
         this.els = {
             header: $(".static-controls"),
-            chatBox: $(".chat-box"),
+            chatBox: new IScroll(".chat-box"),
             chapterSelect: $("select"),
             messages: $(".chat-box-messages"),
             typing: function (login) {
@@ -55,9 +54,9 @@
     };
 
     View.prototype.loadMessages = function (messages) {
-        hide(this.els.messages);
-
         messages.forEach(this.checkDirection);
+
+        hide(this.els.messages);
 
         this.els.messages.innerHTML = Handlebars.templates.chatBubbles({
             messages: messages
@@ -75,25 +74,48 @@
             messages: [message]
         });
 
+        this.updateVirtualKeyboardHeight(true);
         this.scrollToBottom();
     };
 
     View.prototype.startTyping = function (login) {
-        show(this.els.typing(login));
     };
 
     View.prototype.stopTyping = function (login) {
-        hide(this.els.typing(login));
+    };
+
+    View.prototype.getVirtualKeyboardHeight = function () {
+        if (this.isTyping) {
+            if (navigator.userAgent.match(/iemobile/i)) {
+                return 225;
+            }
+            if (navigator.userAgent.match(/(iphone|ipod|ipad)/i)) {
+                return 261;
+            }
+        }
+
+        return 0;
+    };
+
+    View.prototype.updateVirtualKeyboardHeight = function (isTyping) {
+        var height;
+
+        if (isTyping !== undefined) {
+            this.isTyping = isTyping;
+        }
+
+        height = this.getVirtualKeyboardHeight();
+        this.els.chatBox.wrapper.style.setProperty('bottom', height + 'px');
+        this.els.chatBox.refresh();
     };
 
     View.prototype.scrollToBottom = function () {
-        // var msg = document.querySelector(".chat-bubble:last-child");
-        // if (msg) {
-        //     location.hash = msg.getAttribute("name");
-        //     this.els.input.focus();
-        // }
+        var chatBox = this.els.chatBox,
+            lastMessage = this.els.messages.lastElementChild;
 
-        this.els.chatBox.scrollTop = this.els.chatBox.scrollHeight;
+        if (lastMessage) {
+            chatBox.scrollToElement(lastMessage, 'auto');
+        }
     };
 
     View.prototype.fixRTL = function () {
@@ -109,6 +131,12 @@
         var self = this,
             you = chat.register("you");
 
+        if (app.debug) {
+            window.addEventListener('error', function (e) {
+                window.alert(e.message);
+            });
+        }
+
         this.els.chapterSelect.addEventListener('change', function (e) {
             chat.clear();
         });
@@ -121,6 +149,16 @@
         this.els.logo.addEventListener('click', function (e) {
             hide(this);
             e.preventDefault();
+        });
+
+        this.els.input.addEventListener('deactivate', function () {
+            self.updateVirtualKeyboardHeight(false);
+            self.scrollToBottom();
+        });
+
+        this.els.input.addEventListener('blur', function () {
+            self.updateVirtualKeyboardHeight(false);
+            self.scrollToBottom();
         });
 
         this.els.input.addEventListener('focus', this.fixRTL.bind(this));
