@@ -4,7 +4,8 @@
   "description": "ha-More, the virtual teacher of Hebrew",
   "main": "index.html",
   "scripts": {
-    "start": "./build.sh && sudo http-server -i 0.0.0.0 -p 80"
+    "start": "./build.sh && sudo http-server -i 0.0.0.0 -p 80",
+    "test": "karma start test/karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,19 @@
     "url": "https://github.com/noomorph/hamore/issues"
   },
   "homepage": "https://github.com/noomorph/hamore",
-  "dependencies": { },
-  "devDependencies": { }
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "grunt": "~0.4.5",
+    "grunt-karma": "~0.8.3",
+    "karma": "~0.12.19",
+    "karma-chai": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.4",
+    "karma-ios-launcher": "0.0.3",
+    "karma-mocha": "~0.1.6",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-sinon-chai": "~0.2.0",
+    "karma-spec-reporter": "0.0.13",
+    "mocha": "~1.21.3"
+  }
 }
