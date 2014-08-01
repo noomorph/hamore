@@ -1,12 +1,10 @@
 var fs = require('fs'),
     path = require('path'),
-    lessonsDir = process.argv[2];
+    lessonsDir = path.join(__dirname, process.argv[2]);
 
-function listAllFiles(dir) {
-    var base = path.join(__dirname, dir);
-
-    return fs.readdirSync(base).map(function (filename) {
-        return path.join(base, filename);
+function listAllFiles(baseDir) {
+    return fs.readdirSync(baseDir).map(function (filename) {
+        return path.join(baseDir, filename);
     }).filter(function (filename) {
         return (/\.json$/i).test(filename) &&
                !(/index\.json$/i).test(filename);
@@ -40,7 +38,8 @@ function getAllLessons() {
     files.forEach(function (file) {
         var meta = getMetaInfo(file);
 
-        if (meta.name && meta.url) {
+        if (meta.name) {
+            meta.url = "/" + path.relative(__dirname, file);
             lessons.push(meta);
         }
     });
