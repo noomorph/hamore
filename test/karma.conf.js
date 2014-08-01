@@ -14,13 +14,12 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai', 'sinon-chai'],
 
     // list of files / patterns to load in the browser
     files: [
       'bower_components/iscroll/build/iscroll-lite.js',
       'bower_components/handlebars/handlebars.runtime.js',
-      'node_modules/karma-chai/adapter.js',
       'js/common/*.js',
       'js/*.js',
       'test/spec/**/*.js'

@@ -3,15 +3,20 @@
     function Hamore(chat) {
         var self = this;
 
-        chat.on('load', this.onLoad.bind(this));
-        chat.on('newMessage', this.onNewMessage.bind(this));
+        chat.on('load', function () {
+            self.onLoad.apply(self, arguments);
+        });
+
+        chat.on('newMessage', function () {
+            self.onNewMessage.apply(self, arguments);
+        });
 
         this.chat = chat.register("more");
     }
 
     Hamore.prototype.onLoad = function (e) {
         if (e.messages.length === 0) {
-            this.type("Шалом!", 500);
+            this.type("Шалом!");
             return;
         }
 
@@ -22,21 +27,26 @@
         }
     };
 
-    Hamore.prototype.type = function (text, duration) {
-        var chat = this.chat;
+    Hamore.prototype.calculateTimeToType = function (text) {
+        var charsInMinute = 1200,
+            msInMinute = 60000,
+            timeToType = msInMinute * (text.length / charsInMinute);
+
+        return Math.min(1000, timeToType);
+    };
+
+    Hamore.prototype.type = function (text) {
+        var chat = this.chat,
+            timeToType = this.calculateTimeToType(text);
 
         setTimeout(function () {
-            chat.startTyping();
-
-            setTimeout(function () {
-                chat.sendMessage(text);
-            }, duration || 50);
-        }, 500);
+            chat.sendMessage(text);
+        }, timeToType);
     };
 
     Hamore.prototype.answer = function (message) {
         var text = message.text;
-        this.type(text + "?", text.length * 50);
+        this.type(text + "?");
     };
 
     Hamore.prototype.onNewMessage = function (e) {
