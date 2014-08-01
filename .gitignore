@@ -3,3 +3,4 @@ bower_components/
 node_modules/
 templates/compiled.js
 config/*.json
+lessons/*.json
