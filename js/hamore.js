@@ -32,7 +32,7 @@
             msInMinute = 60000,
             timeToType = msInMinute * (text.length / charsInMinute);
 
-        return Math.min(1000, timeToType);
+        return 500 + Math.min(1000, timeToType);
     };
 
     Hamore.prototype.type = function (text) {
