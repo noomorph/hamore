@@ -1,12 +1,8 @@
 require.config({
     paths: {
-        'handlebars': '../bower_components/handlebars/handlebars.runtime',
-        'iscroll': '../bower_components/iscroll/build/iscroll'
+        'iscroll': '../bower_components/iscroll/build/iscroll-lite'
     },
     shim : {
-        'handlebars': {
-            exports: 'Handlebars'
-        },
         'iscroll': {
             exports: 'IScroll'
         }

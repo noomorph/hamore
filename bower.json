@@ -3,8 +3,7 @@
   "private": true,
   "dependencies": {
     "requirejs": "~2.1.8",
-    "iscroll": "~5.1.2",
-    "handlebars": "~2.0.0"
+    "iscroll": "~5.1.2"
   },
   "devDependencies": {}
 }
