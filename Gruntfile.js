@@ -7,8 +7,6 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-var path = require('path');
-
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
