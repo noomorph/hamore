@@ -1,12 +1,14 @@
-(function (exports) {
+define(['common/utils'], function (util) {
+    'use strict';
+
     function Lesson(options) {
         this.name = options.name;
         this.url  = options.url;
         this.dictionary = options.dictionary || [];
     }
 
-    Lesson.prototype.cache = function (options) {
-        var lessons = localStorage.getItem("lessons");
+    Lesson.prototype.cache = function () {
+        var lessons = localStorage.getItem('lessons');
 
         if (lessons) {
             lessons = JSON.parse(lessons);
@@ -14,9 +16,9 @@
             lessons = {};
         }
 
-        lessons[this.name] = this;
+        lessons[this.url] = this;
 
-        localStorage.setItem("lessons", JSON.stringify(lessons));
+        localStorage.setItem('lessons', JSON.stringify(lessons));
     };
 
     Lesson.prototype.load = function (options) {
@@ -30,28 +32,36 @@
         }
 
         var self = this;
-        app.util.ajax({
+
+        util.ajax({
             url: this.url,
             dataType: 'json',
             method: 'get',
             onload: function (e) {
                 Lesson.call(self, e.data);
+                setTimeout(function () {
+                    self.cache();
+                }, 100);
+
                 options.onload(self);
             }
         });
     };
 
-    Lesson.list = function () {
-        app.util.ajax({
-            url: this.url,
+    Lesson.list = function (options) {
+        options = options || {};
+        options.onload = options.onload || function () {};
+        options.onerror = options.onerror || function () {};
+
+        util.ajax({
+            url: '/data/index.json',
             dataType: 'json',
             method: 'get',
             onload: function (e) {
-                Lesson.call(self, e.data);
-                options.onload(self);
+                options.onload(e.data);
             }
         });
     };
 
-    exports.Lesson = Lesson;
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return Lesson;
+});

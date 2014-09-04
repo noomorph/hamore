@@ -1,30 +1,31 @@
-(function (exports) {
+define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson) {
+    'use strict';
+
     function View(container, chat) {
         function $(selector) {
-            if (typeof selector === "string") {
+            if (typeof selector === 'string') {
                 return container.querySelector(selector);
             }
 
             return selector;
         }
 
-        var self = this;
-
         this.container = container;
 
         this.els = {
-            header: $(".static-controls"),
-            chatBox: new IScroll(".chat-box"),
-            chapterSelect: $("select"),
-            messages: $(".chat-box-messages"),
+            header: $('.static-controls'),
+            chatBox: new IScroll('.chat-box'),
+            chapterSelect: $('select'),
+            messages: $('.chat-box-messages'),
             typing: function (login) {
                 return $('.chat-typing[data-sender="' + login + '"]');
             },
-            avatar: $(".hamore-avatar"),
-            logo: $("#hamore-logo"),
-            input: $("#message-input")
+            avatar: $('.hamore-avatar'),
+            logo: $('#hamore-logo'),
+            input: $('#message-input')
         };
 
+        this.fillChapterSelection();
         this.attachListeners(chat);
     }
 
@@ -36,33 +37,62 @@
         el.style.setProperty('display', 'none');
     }
 
+    View.prototype.fillChapterSelection = function () {
+        var self = this,
+            chapters = self.els.chapterSelect;
+
+        Lesson.list({
+            onload: function (data) {
+                hide(chapters);
+
+                chapters.innerHTML = '';
+                data.lessons.forEach(function (lesson) {
+                    var option = document.createElement('option');
+                    option.value = lesson.url;
+                    option.text = lesson.name;
+
+                    chapters.appendChild(option);
+                    return option;
+                });
+
+                show(chapters);
+            }
+        });
+    };
+
     View.prototype.checkDirection = function (message) {
         var rtl;
 
         if (!message) {
-            return "rtl";
+            return 'rtl';
         }
 
-        if (typeof message === "string") {
+        if (typeof message === 'string') {
             rtl = /[\u05D0-\u05F4]/.test(message);
         } else {
             rtl = /[\u05D0-\u05F4]/.test(message.text);
             message.rtl = rtl;
         }
 
-        return rtl ? "rtl" : "ltr";
+        return rtl ? 'rtl' : 'ltr';
     };
 
     View.prototype.loadMessages = function (messages) {
+        var emsgs = this.els.messages;
+
         messages.forEach(this.checkDirection);
 
-        hide(this.els.messages);
+        hide(emsgs);
 
-        this.els.messages.innerHTML = Handlebars.templates.chatBubbles({
+        while (emsgs.hasChildNodes()) {
+            emsgs.removeChild(emsgs.lastChild);
+        }
+
+        emsgs.appendChild(templates.chatBubbles({
             messages: messages
-        });
+        }));
 
-        show(this.els.messages);
+        show(emsgs);
 
         this.scrollToBottom();
     };
@@ -70,19 +100,17 @@
     View.prototype.appendMessage = function (message) {
         this.checkDirection(message);
 
-        this.els.messages.innerHTML += Handlebars.templates.chatBubbles({
+        this.els.messages.appendChild(templates.chatBubbles({
             messages: [message]
-        });
+        }));
 
         this.updateVirtualKeyboardHeight(true);
         this.scrollToBottom();
     };
 
-    View.prototype.startTyping = function (login) {
-    };
+    View.prototype.startTyping = function () { };
 
-    View.prototype.stopTyping = function (login) {
-    };
+    View.prototype.stopTyping = function () { };
 
     View.prototype.getVirtualKeyboardHeight = function () {
         if (this.isTyping) {
@@ -129,16 +157,17 @@
 
     View.prototype.attachListeners = function (chat) {
         var self = this,
-            you = chat.register("you");
+            you = chat.register('you');
 
-        if (app.debug) {
-            window.addEventListener('error', function (e) {
-                window.alert(e.message);
-            });
-        }
-
-        this.els.chapterSelect.addEventListener('change', function (e) {
-            chat.clear();
+        this.els.chapterSelect.addEventListener('change', function () {
+            if (this.value) {
+                var lesson = new Lesson({ url: this.value });
+                lesson.load({
+                    onload: function () {
+                        chat.clear();
+                    }
+                });
+            }
         });
 
         this.els.avatar.addEventListener('click', function (e) {
@@ -169,7 +198,7 @@
 
             if (e.which === 13 && input.value) {
                 you.sendMessage(input.value);
-                input.value = "";
+                input.value = '';
                 e.preventDefault();
                 return false;
             }
@@ -193,5 +222,5 @@
         });
     };
 
-    exports.View = View;
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return View;
+});

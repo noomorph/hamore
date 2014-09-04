@@ -1,4 +1,5 @@
-(function (exports) {
+define(function () {
+    'use strict';
 
     function Hamore(chat) {
         var self = this;
@@ -11,18 +12,18 @@
             self.onNewMessage.apply(self, arguments);
         });
 
-        this.chat = chat.register("more");
+        this.chat = chat.register('more');
     }
 
     Hamore.prototype.onLoad = function (e) {
         if (e.messages.length === 0) {
-            this.type("Шалом!");
+            this.type('Шалом!');
             return;
         }
 
         var lastMessage = e.messages[e.messages.length - 1];
 
-        if (lastMessage.from === "you") {
+        if (lastMessage.from === 'you') {
             this.answer(lastMessage);
         }
     };
@@ -46,14 +47,14 @@
 
     Hamore.prototype.answer = function (message) {
         var text = message.text;
-        this.type(text + "?");
+        this.type(text + '?');
     };
 
     Hamore.prototype.onNewMessage = function (e) {
-        if (e.message.from === "you") {
+        if (e.message.from === 'you') {
             this.answer(e.message);
         }
     };
 
-    exports.Hamore = Hamore;
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return Hamore;
+});

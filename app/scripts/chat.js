@@ -1,10 +1,10 @@
-/*global app*/
-(function (exports) {
+define(['common/utils', 'common/publisher'], function (util, Publisher) {
+    'use strict';
 
     var ERRORS = {
-        NO_MEMBER: "Chat registration failed: no member passed",
-        NO_MEMBER_LOGIN: "Chat registration failed: member has no login",
-        ALREADY_REGISTERED: "User with \"#1\" is already registered."
+        NO_MEMBER: 'Chat registration failed: no member passed',
+        NO_MEMBER_LOGIN: 'Chat registration failed: member has no login',
+        ALREADY_REGISTERED: 'User with "#1" is already registered.'
     };
 
     function Chat() {
@@ -23,7 +23,7 @@
         ]);
     }
 
-    app.util.apply(Chat.prototype, app.Publisher.prototype);
+    util.apply(Chat.prototype, Publisher.prototype);
 
     Chat.prototype.newId = function () {
         return (++this._maxId);
@@ -50,7 +50,7 @@
             messages: this.messages
         });
 
-        this.on('clear', function (e) {
+        this.on('clear', function () {
             chatHistory.clear();
         });
 
@@ -99,11 +99,11 @@
 
     Chat.prototype.register = function (login) {
         if (!login) {
-            app.util.raiseError(ERRORS.NO_MEMBER_LOGIN);
+            util.raiseError(ERRORS.NO_MEMBER_LOGIN);
         }
 
         if (this.members.hasOwnProperty(login)) {
-            app.util.raiseError(ERRORS.ALREADY_REGISTERED, login);
+            util.raiseError(ERRORS.ALREADY_REGISTERED, login);
         }
 
         var chat = this;
@@ -118,7 +118,7 @@
                 chat.stopTyping(login);
             },
             sendMessage: function (details) {
-                if (typeof details === "string") {
+                if (typeof details === 'string') {
                     details = { text: details };
                 }
 
@@ -136,6 +136,5 @@
         return false;
     };
 
-    exports.Chat = Chat;
-
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return Chat;
+});

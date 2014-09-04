@@ -1,18 +1,19 @@
-(function (exports) {
+/* jshint strict: false */
+define(function () {
 
     function formatString() {
         var message = arguments[0],
-            i; 
+            i;
 
         for (i = 1; i < arguments.length; i++) {
-            message = message.replace("#" + i, arguments[i]);
+            message = message.replace('#' + i, arguments[i]);
         }
 
         return message;
     }
 
     function raiseError() {
-        var message = formatString.apply(this, arguments);
+        var message = formatString.apply(null, arguments);
         throw new Error(message);
     }
 
@@ -70,11 +71,10 @@
         request.send();
     }
 
-    exports.util = {
+    return {
         apply: apply,
         formatString: formatString,
         raiseError: raiseError,
         ajax: ajax
     };
-
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+});

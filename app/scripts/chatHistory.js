@@ -1,6 +1,7 @@
-(function (exports) {
+define(function () {
+    'use strict';
 
-    var HISTORY_ID = "chatHistory",
+    var HISTORY_ID = 'chatHistory',
         AUTOSAVE   = true;
 
     function ChatHistory(memento) {
@@ -38,11 +39,11 @@
     };
 
     ChatHistory.prototype.appendMessage = function (message) {
-        if (!message) return;
-        if (!message.id) return;
-        if (!message.timeStamp) return;
+        if (!message) { return; }
+        if (!message.id) { return; }
+        if (!message.timeStamp) { return; }
 
-        if (message.timeStamp < this.lastModified) return;
+        if (message.timeStamp < this.lastModified) { return; }
 
         this.messages.push(message);
         this.lastModified = message.timeStamp;
@@ -62,12 +63,8 @@
 
         chat.on('newMessage', function (e) {
             self.appendMessage(e.message);
-
-            if (app.debug) {
-                console.log("Message sent to history: ", e.message);
-            }
         });
     };
 
-    exports.ChatHistory = ChatHistory;
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return ChatHistory;
+});

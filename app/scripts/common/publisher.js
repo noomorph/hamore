@@ -1,4 +1,7 @@
-(function (exports) {
+/* jshint strict: false */
+define(function () {
+    'use strict';
+
     function Publisher() {
     }
 
@@ -37,6 +40,6 @@
         return this;
     };
 
-    exports.Publisher = Publisher;
-})(typeof exports === 'undefined' ? this.app = this.app || {} : exports);
+    return Publisher;
+});
 
