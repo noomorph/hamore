@@ -1,18 +1,20 @@
-/* jshint expr:true */
-define(['sinon', 'hamore'], function (sinon, Hamore) {
+/* jshint expr: true */
+define(['chai', 'app/hamore'], function (chai, Hamore) {
     'use strict';
 
+    var expect = chai.expect;
+
     describe('ha-More:', function () {
-        var hamore, chat;
+        var chat, hamore;
 
         beforeEach(function () {
             chat = {
-                on: function () {},
-                off: function () {},
+                on: function () { },
+                off: function () { },
                 register: function () {
                     return {
-                        startTyping: function () {},
-                        stopTyping: function () {},
+                        startTyping: function () { },
+                        stopTyping: function () { },
                         sendMessage: sinon.spy()
                     };
                 }
@@ -32,7 +34,9 @@ define(['sinon', 'hamore'], function (sinon, Hamore) {
 
             describe('when chat log is empty', function () {
                 beforeEach(function () {
-                    hamore.onLoad({ messages: [] });
+                    hamore.onLoad({
+                        messages: []
+                    });
                 });
 
                 it('should say hello after a while', function () {
@@ -55,7 +59,6 @@ define(['sinon', 'hamore'], function (sinon, Hamore) {
             describe('when chat log ends with student\'s answer', function () {
                 beforeEach(function () {
                     sinon.spy(hamore, 'answer');
-
                     hamore.onLoad({
                         messages: [
                             { from: 'more' },

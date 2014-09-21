@@ -25,6 +25,6 @@
         "after": false,
         "afterEach": false,
         "it": false,
-        "expect": false
+        "sinon": false
     }
 }

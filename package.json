@@ -1,8 +1,26 @@
 {
-  "name": "hamore2",
-  "version": "0.0.0",
+  "name": "hamore",
+  "description": "ha-More, the virtual teacher of Hebrew",
+  "version": "0.1.0",
+  "author": "Yaroslav Serhieiev",
+  "license": "MIT",
+  "homepage": "https://github.com/noomorph/hamore",
+  "bugs": {
+    "url": "https://github.com/noomorph/hamore/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noomorph/hamore"
+  },
+  "keywords": [
+    "hebrew",
+    "webapp",
+    "learning",
+    "html5"
+  ],
   "dependencies": {},
   "devDependencies": {
+    "chai": "latest",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.5.0",
     "grunt-bower-install": "~0.7.0",
@@ -28,10 +46,21 @@
     "grunt-usemin": "~0.1.10",
     "grunt-yaml": "^0.4.1",
     "jshint-stylish": "~0.1.3",
+    "karma": "latest",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.6",
+    "karma-mocha": "latest",
+    "karma-requirejs": "^0.2.2",
+    "karma-spec-reporter": "0.0.13",
     "load-grunt-tasks": "~0.2.0",
+    "sinon": "latest",
+    "sinon-chai": "^2.5.0",
     "time-grunt": "~0.2.0"
   },
+  "scripts": {
+    "test": "karma start test/karma.conf.js"
+  },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }
