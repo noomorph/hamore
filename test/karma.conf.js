@@ -10,11 +10,13 @@ module.exports = function(config) {
             // sinon will be accessable from global context
             { pattern: 'node_modules/sinon/pkg/sinon.js', included: true },
             // allow to load any *.js from node_modules by karma web-server
-            { pattern: 'node_modules/**/*.js', included: false},
+            { pattern: 'node_modules/chai/chai.js', included: false},
+            { pattern: 'node_modules/sinon-chai/lib/sinon-chai.js', included: false},
+            { pattern: 'node_modules/mocha/mocha.js', included: false},
+            { pattern: 'node_modules/requirejs/require.js', included: false},
             { pattern: 'app/scripts/**/*.js',  included: false},
             { pattern: 'test/unit/**/*.js', included: false },
-            { pattern: 'test/test-main.js', included: true },
-            // { pattern: 'test/*.js', included: false}
+            { pattern: 'test/test-main.js', included: true }
         ],
 
         // list of files to exclude
@@ -23,7 +25,7 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-            'js/lib/**/*.js': ['coverage']
+            'app/scripts/**/*.js': ['coverage']
         },
 
         // 'dots', 'progress', 'junit', 'growl', 'coverage'
@@ -45,7 +47,7 @@ module.exports = function(config) {
         // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
         // - PhantomJS
         // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
         port: 9876,
         colors: true,
         autoWatch: true,
