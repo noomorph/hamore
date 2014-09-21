@@ -1,3 +1,4 @@
+/* jshint camelcase:false*/
 'use strict';
 
 // # Globbing
@@ -337,6 +338,14 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
+            }
+        },
+
+        coveralls: {
+            options: {
+                coverage_dir: 'coverage',
+                force: true,
+                recursive: true
             }
         },
 
