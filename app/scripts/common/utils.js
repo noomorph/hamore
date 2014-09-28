@@ -1,6 +1,10 @@
 /* jshint strict: false */
 define(function () {
 
+    function clone(data) {
+        return JSON.parse(JSON.stringify(data));
+    }
+
     function formatString() {
         var message = arguments[0],
             i;
@@ -72,6 +76,7 @@ define(function () {
     }
 
     return {
+        clone: clone,
         apply: apply,
         formatString: formatString,
         raiseError: raiseError,

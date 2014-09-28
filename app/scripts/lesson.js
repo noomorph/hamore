@@ -1,66 +1,61 @@
-define(['common/utils'], function (util) {
+define(['word'], function (Word) {
     'use strict';
 
-    function Lesson(options) {
-        this.name = options.name;
-        this.url  = options.url;
-        this.dictionary = options.dictionary || [];
-    }
 
-    Lesson.prototype.cache = function () {
-        var lessons = localStorage.getItem('lessons');
-
-        if (lessons) {
-            lessons = JSON.parse(lessons);
-        } else {
-            lessons = {};
-        }
-
-        lessons[this.url] = this;
-
-        localStorage.setItem('lessons', JSON.stringify(lessons));
-    };
-
-    Lesson.prototype.load = function (options) {
-        options = options || {};
-        options.onload = options.onload || function () {};
-        options.onerror = options.onerror || function () {};
-
-        if (this.dictionary.length > 0) {
-            options.onload(this);
-            return;
-        }
-
+    function Lesson(lessonDto) {
         var self = this;
 
-        util.ajax({
-            url: this.url,
-            dataType: 'json',
-            method: 'get',
-            onload: function (e) {
-                Lesson.call(self, e.data);
-                setTimeout(function () {
-                    self.cache();
-                }, 100);
+        if (lessonDto) {
+            this.name = lessonDto.name;
+            this.url = lessonDto.url;
+            this.words = lessonDto.words;
+        } else {
+            this.name = '';
+            this.url = '';
+            this.words = [];
+        }
 
-                options.onload(self);
+        this.boundReorderWords = function () {
+            reorderWords(self.words);
+        };
+
+        this.words = this.words.map(function (wordDto) {
+            var word = new Word(wordDto);
+            word.onTimesUsedChanged = this.boundReorderWords;
+
+            return word;
+        }, this);
+    }
+
+    function randomExpIndex(len) {
+        var U = Math.random(),
+            E = -Math.log(U) / 7,
+            r = Math.min(0.999, E);
+
+        return Math.floor(r * len);
+    }
+
+    function reorderWords(words) {
+        words.sort(function (a, b) {
+            if (a.timesUsed < b.timesUsed) {
+                return -1;
+            } else if (a.timesUsed > b.timesUsed) {
+                return 1;
+            } else {
+                return 0;
             }
         });
-    };
+    }
 
-    Lesson.list = function (options) {
-        options = options || {};
-        options.onload = options.onload || function () {};
-        options.onerror = options.onerror || function () {};
+    Lesson.prototype.getNextWord = function () {
+        var index = randomExpIndex(this.words.length),
+            nextWord = this.words.splice(index, 1)[0];
 
-        util.ajax({
-            url: '/data/index.json',
-            dataType: 'json',
-            method: 'get',
-            onload: function (e) {
-                options.onload(e.data);
-            }
-        });
+        if (nextWord) {
+            this.words.push(nextWord);
+        }
+
+        return nextWord;
     };
 
     return Lesson;
