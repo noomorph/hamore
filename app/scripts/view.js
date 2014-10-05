@@ -1,7 +1,7 @@
 define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson) {
     'use strict';
 
-    function View(container, chat) {
+    function View(container, chat, lessons) {
         function $(selector) {
             if (typeof selector === 'string') {
                 return container.querySelector(selector);
@@ -25,7 +25,7 @@ define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson)
             input: $('#message-input')
         };
 
-        this.fillChapterSelection();
+        this.fillChapterSelection(lessons);
         this.attachListeners(chat);
     }
 
@@ -37,27 +37,22 @@ define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson)
         el.style.setProperty('display', 'none');
     }
 
-    View.prototype.fillChapterSelection = function () {
-        var self = this,
-            chapters = self.els.chapterSelect;
+    View.prototype.fillChapterSelection = function (lessons) {
+        var chapters = this.els.chapterSelect;
 
-        Lesson.list({
-            onload: function (data) {
-                hide(chapters);
+        hide(chapters);
 
-                chapters.innerHTML = '';
-                data.lessons.forEach(function (lesson) {
-                    var option = document.createElement('option');
-                    option.value = lesson.url;
-                    option.text = lesson.name;
+        chapters.innerHTML = '';
+        lessons.forEach(function (lesson, index) {
+            var option = document.createElement('option');
+            option.value = index;
+            option.text = lesson.name;
 
-                    chapters.appendChild(option);
-                    return option;
-                });
-
-                show(chapters);
-            }
+            chapters.appendChild(option);
+            return option;
         });
+
+        show(chapters);
     };
 
     View.prototype.checkDirection = function (message) {

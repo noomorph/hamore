@@ -1,8 +1,7 @@
 define(['word'], function (Word) {
     'use strict';
 
-
-    function Lesson(lessonDto) {
+    function Lesson(lessonDto, isSelected) {
         var self = this;
 
         if (lessonDto) {
@@ -14,6 +13,8 @@ define(['word'], function (Word) {
             this.url = '';
             this.words = [];
         }
+
+        this.isSelected = Boolean(isSelected);
 
         this.boundReorderWords = function () {
             reorderWords(self.words);
@@ -29,7 +30,7 @@ define(['word'], function (Word) {
 
     function randomExpIndex(len) {
         var U = Math.random(),
-            E = -Math.log(U) / 7,
+            E = -Math.log(U) / 20,
             r = Math.min(0.999, E);
 
         return Math.floor(r * len);

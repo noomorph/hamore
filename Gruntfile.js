@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
-    var indexerFiles = [];
+    var indexer = { phraseBook: null, lessons: [] };
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -354,17 +354,23 @@ module.exports = function (grunt) {
                 options: {
                     disableDest: true,
                     middleware: function (response, json, src, dest) { //json , src, dest) {
-                        indexerFiles.push({
-                            name: response.name,
-                            url: src.replace(/^app(.*)src\/(.*)ya?ml$/, '$1$2json')
-                        });
+                        var tpl = 'define(function () { return {0}; });';
 
-                        grunt.file.write(dest, JSON.stringify({ lessons: indexerFiles }));
+                        if (src.match(/hamore.yaml/)) {
+                            indexer.phraseBook = response;
+                        } else {
+                            indexer.lessons.push(response);
+                        }
+
+                        grunt.file.write(dest, tpl.replace('{0}', JSON.stringify(indexer)));
                         grunt.log.writeln('Appended index of ' + src.cyan + ' -> ' + dest.cyan);
                     }
                 },
                 files: {
-                    '<%= yeoman.app %>/data/index.json': ['<%= yeoman.app %>/data/src/**/yehida*.yaml']
+                    '<%= yeoman.app %>/data/index.js': [
+                        '<%= yeoman.app %>/data/src/**/yehida*.yaml',
+                        '<%= yeoman.app %>/data/src/**/hamore.yaml'
+                    ]
                 }
             },
             all: {
@@ -405,11 +411,12 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
+        'yaml:all',
+        'yaml:indexer',
         'requirejs',
         'concat',
         'cssmin',
         'uglify',
-        'yaml',
         'copy:dist',
         'rev',
         'usemin',

@@ -44,7 +44,7 @@ define(function () {
 
         formattedPhrase = templatePhrase;
         for (key in substitutions) {
-            pattern = new RegExp('#{' + key + '}', 'mg');
+            pattern = new RegExp('\\${' + key + '}', 'mg');
             formattedPhrase = formattedPhrase.replace(pattern, substitutions[key]);
         }
 

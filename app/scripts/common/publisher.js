@@ -34,8 +34,8 @@ define(function () {
     Publisher.prototype.trigger = function (eventName, eventObject) {
         this._subscribers[eventName].forEach(function (callback) {
             var clone = JSON.parse(JSON.stringify(eventObject));
-            callback(clone);
-        });
+            callback.call(this, clone);
+        }, this);
 
         return this;
     };

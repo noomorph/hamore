@@ -5,6 +5,22 @@ define(function () {
         return JSON.parse(JSON.stringify(data));
     }
 
+    function isEmptyObject(obj) {
+        var prop;
+
+        if (typeof obj !== 'object') {
+            return false;
+        }
+
+        for (prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     function formatString() {
         var message = arguments[0],
             i;
@@ -75,11 +91,29 @@ define(function () {
         request.send();
     }
 
+    function all(callback) {
+        var args = Array.prototype.slice.call(arguments, 1),
+            thread;
+
+        thread = setInterval(function () {
+            var values = args.map(function (arg) {
+                return arg();
+            });
+
+            if (values.every(function (v) { return !!v; })) {
+                clearInterval(thread);
+                callback.apply(this, values);
+            }
+        }, 50);
+    }
+
     return {
         clone: clone,
+        isEmptyObject: isEmptyObject,
         apply: apply,
         formatString: formatString,
         raiseError: raiseError,
-        ajax: ajax
+        ajax: ajax,
+        all: all
     };
 });

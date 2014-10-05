@@ -1,19 +1,44 @@
-define(['chat', 'chatHistory', 'view', 'hamore'], function (Chat, ChatHistory, View, Hamore) {
+define(['chat', 'chatHistory', 'lesson', 'phraseBook', 'data', 'view', 'hamore'],
+    function (Chat, ChatHistory, Lesson, PhraseBook, data, View, Hamore) {
+        'use strict';
 
-    'use strict';
+        function App() {
+        }
 
-    function App() {
+        App.prototype.start = function () {
+            var chat = new Chat(),
+                moreChat = chat.register('more'),
+                phraseBook = new PhraseBook(data.phraseBook),
+                lessons = data.lessons.map(function (lessonDto) {
+                    return new Lesson(lessonDto);
+                }),
+                lesson = lessons[0],
+                chatHistory = ChatHistory.loadSync(),
+                teacher = new Hamore(phraseBook, lesson);
+
+            new View(document, chat, lessons);
+
+            chat.on('load', function (e) {
+                onNewMessage(this, e.messages);
+            }).on('newMessage', function (e) {
+                if (e.message.from !== 'more') {
+                    onNewMessage(this, [e.message]);
+                }
+            });
+
+            chat.loadHistory(chatHistory);
+
+            function onNewMessage(chat, messages) {
+                var m = messages,
+                    msg = m[m.length - 1];
+
+                var answerMsgs = teacher.answer(msg);
+                answerMsgs.forEach(function (msg) {
+                    moreChat.sendMessage(msg);
+                });
+            }
+        };
+
+        return App;
     }
-
-    App.prototype.start = function () {
-        var chat = new Chat(),
-            chatHistory = ChatHistory.loadSync();
-
-        this.view = new View(document, chat);
-        this.teacher = new Hamore(chat);
-
-        chat.loadHistory(chatHistory);
-    };
-
-    return App;
-});
+);

@@ -1,6 +1,7 @@
 require.config({
     paths: {
-        'iscroll': '../bower_components/iscroll/build/iscroll-lite'
+        'iscroll': '../bower_components/iscroll/build/iscroll-lite',
+        'data': '../data/index'
     },
     shim : {
         'iscroll': {

@@ -1,58 +1,47 @@
 define(function () {
     'use strict';
 
-    function Hamore(chat) {
-        var self = this;
-
-        chat.on('load', function () {
-            self.onLoad.apply(self, arguments);
-        });
-
-        chat.on('newMessage', function () {
-            self.onNewMessage.apply(self, arguments);
-        });
-
-        this.chat = chat.register('more');
+    function Hamore(phraseBook, lesson) {
+        this.lesson = lesson;
+        this.phraseBook = phraseBook;
+        this.word = null;
     }
 
-    Hamore.prototype.onLoad = function (e) {
-        if (e.messages.length === 0) {
-            this.type('Шалом!');
-            return;
-        }
+    function greet(hamore) {
+        return hamore.phraseBook.greet();
+    }
 
-        var lastMessage = e.messages[e.messages.length - 1];
+    function askForWord(hamore) {
+        hamore.word = hamore.lesson.getNextWord();
+        return hamore.phraseBook.askFor(hamore.word);
+    }
 
-        if (lastMessage.from === 'you') {
-            this.answer(lastMessage);
-        }
-    };
+    function checkWord(hamore, word) {
+        var expected = hamore.word.hebrew,
+              actual = word.trim();
 
-    Hamore.prototype.calculateTimeToType = function (text) {
-        var charsInMinute = 1200,
-            msInMinute = 60000,
-            timeToType = msInMinute * (text.length / charsInMinute);
+        return expected === actual;
+    }
 
-        return 500 + Math.min(1000, timeToType);
-    };
+    function correctWord(hamore) {
+        return hamore.phraseBook.correctMistake(hamore.word);
+    }
 
-    Hamore.prototype.type = function (text) {
-        var chat = this.chat,
-            timeToType = this.calculateTimeToType(text);
-
-        setTimeout(function () {
-            chat.sendMessage(text);
-        }, timeToType);
-    };
+    function appraise(hamore) {
+        return hamore.phraseBook.appraise();
+    }
 
     Hamore.prototype.answer = function (message) {
-        var text = message.text;
-        this.type(text + '?');
-    };
+        if (!message || !this.word) {
+            return [greet(this), askForWord(this)];
+        }
 
-    Hamore.prototype.onNewMessage = function (e) {
-        if (e.message.from === 'you') {
-            this.answer(e.message);
+        if (message) {
+            if (checkWord(this, message.text)) {
+                return [appraise(this), askForWord(this)];
+            } else {
+                return [correctWord(this)];
+            }
         }
     };
 
