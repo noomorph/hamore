@@ -5,72 +5,65 @@ define(['chai', 'app/hamore'], function (chai, Hamore) {
     var expect = chai.expect;
 
     describe('ha-More:', function () {
-        var chat, hamore;
+        var phraseBook, lesson, hamore;
 
         beforeEach(function () {
-            chat = {
-                on: function () { },
-                off: function () { },
-                register: function () {
-                    return {
-                        startTyping: function () { },
-                        stopTyping: function () { },
-                        sendMessage: sinon.spy()
-                    };
+            lesson = {
+                getNextWord: function () {
+                    return { hebrew: 'word' };
                 }
             };
 
-            hamore = new Hamore(chat);
+            phraseBook = {
+                greet: function () {
+                    return 'greeting';
+                },
+                askFor: function (word) {
+                    return ['askFor', word];
+                },
+                correctMistake: function (word) {
+                    return ['correctMistake', word];
+                },
+                appraise: function () {
+                    return 'appraise';
+                },
+                excuse: function () {
+                    return 'excuse';
+                }
+            };
+
+            hamore = new Hamore(phraseBook, lesson);
         });
 
         it('can be instantated', function () {
             expect(hamore).to.be.ok;
         });
 
-        describe('chat output, at start-up', function () {
-            beforeEach(function () {
-                sinon.spy(hamore, 'type');
-            });
+        it('greets at start', function () {
+            expect(hamore.answer()[0]).to.eq('greeting');
+        });
 
-            describe('when chat log is empty', function () {
-                beforeEach(function () {
-                    hamore.onLoad({
-                        messages: []
-                    });
-                });
+        it('greets at start even if there is a message to respond', function () {
+            expect(hamore.answer({ text: 'whatever' })[0]).to.contain('greeting');
+        });
 
-                it('should say hello after a while', function () {
-                    expect(hamore.type).to.have.been.calledWith('Шалом!');
-                });
-            });
+        it('asks for word at start', function () {
+            expect(hamore.answer()[1]).to.eql(['askFor', { hebrew: 'word' }]);
+        });
 
-            describe('when chat log ends with teacher\'s message', function () {
-                beforeEach(function () {
-                    hamore.onLoad({
-                        messages: [ { from: 'more' }]
-                    });
-                });
+        it('appraises if words match', function () {
+            hamore.answer();
+            expect(hamore.answer({ text: 'word' })).to.contain('appraise');
+        });
 
-                it('should be silent, waiting for response', function () {
-                    expect(hamore.type).to.not.have.been.called;
-                });
-            });
+        it('asks for next word if words match', function () {
+            hamore.answer();
+            expect(hamore.answer({ text: 'word' })[1]).to.eql(['askFor', { hebrew: 'word' }]);
+        });
 
-            describe('when chat log ends with student\'s answer', function () {
-                beforeEach(function () {
-                    sinon.spy(hamore, 'answer');
-                    hamore.onLoad({
-                        messages: [
-                            { from: 'more' },
-                            { from: 'you' }
-                        ]
-                    });
-                });
-
-                it('should mutually answer something', function () {
-                    expect(hamore.answer).to.have.been.called;
-                });
-            });
+        it('corrects if words do not match', function () {
+            hamore.answer();
+            expect(hamore.answer({ text: 'w3rD' })[0]).to.eql(['correctMistake', { hebrew: 'word' }]);
         });
     });
 });

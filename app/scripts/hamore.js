@@ -36,12 +36,10 @@ define(function () {
             return [greet(this), askForWord(this)];
         }
 
-        if (message) {
-            if (checkWord(this, message.text)) {
-                return [appraise(this), askForWord(this)];
-            } else {
-                return [correctWord(this)];
-            }
+        if (checkWord(this, message.text)) {
+            return [appraise(this), askForWord(this)];
+        } else {
+            return [correctWord(this)];
         }
     };
 

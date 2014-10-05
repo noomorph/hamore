@@ -143,13 +143,12 @@ select::-ms-expand {
   clear: both;
   display: block;
   margin: 5px 0;
-  margin-top: -10px;
   max-width: 70%;
-  padding: .4em .5em;
+  padding: .4em .5em .4em .8em;
 }
 
 .chat-bubble:first-child {
-  margin-top: .75em;
+  margin-top: 0;
 }
 
 .chat-typing {

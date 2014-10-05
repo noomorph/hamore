@@ -1,7 +1,7 @@
-define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson) {
+define(['templates', 'iscroll'], function (templates, IScroll) {
     'use strict';
 
-    function View(container, chat, lessons) {
+    function View(container, chat, lessons, onLessonIndexChanged) {
         function $(selector) {
             if (typeof selector === 'string') {
                 return container.querySelector(selector);
@@ -25,8 +25,12 @@ define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson)
             input: $('#message-input')
         };
 
-        this.fillChapterSelection(lessons);
+        var lessonIndex = localStorage.getItem('lessonIndex') || 0;
+        this.fillChapterSelection(lessons, lessonIndex);
         this.attachListeners(chat);
+
+        this.onLessonIndexChanged = onLessonIndexChanged;
+        this.onLessonIndexChanged(lessonIndex);
     }
 
     function show(el) {
@@ -37,22 +41,23 @@ define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson)
         el.style.setProperty('display', 'none');
     }
 
-    View.prototype.fillChapterSelection = function (lessons) {
-        var chapters = this.els.chapterSelect;
+    View.prototype.fillChapterSelection = function (lessons, index) {
+        var select = this.els.chapterSelect;
 
-        hide(chapters);
+        hide(select);
+        select.innerHTML = '';
 
-        chapters.innerHTML = '';
         lessons.forEach(function (lesson, index) {
             var option = document.createElement('option');
             option.value = index;
             option.text = lesson.name;
 
-            chapters.appendChild(option);
+            select.appendChild(option);
             return option;
         });
 
-        show(chapters);
+        select.selectedIndex = index;
+        show(select);
     };
 
     View.prototype.checkDirection = function (message) {
@@ -154,15 +159,10 @@ define(['templates', 'iscroll', 'lesson'], function (templates, IScroll, Lesson)
         var self = this,
             you = chat.register('you');
 
-        this.els.chapterSelect.addEventListener('change', function () {
-            if (this.value) {
-                var lesson = new Lesson({ url: this.value });
-                lesson.load({
-                    onload: function () {
-                        chat.clear();
-                    }
-                });
-            }
+        this.els.chapterSelect.addEventListener('change', function (e) {
+            var index = +e.target.value;
+            self.onLessonIndexChanged(index);
+            chat.clear();
         });
 
         this.els.avatar.addEventListener('click', function (e) {

@@ -12,11 +12,11 @@ define(['chat', 'chatHistory', 'lesson', 'phraseBook', 'data', 'view', 'hamore']
                 lessons = data.lessons.map(function (lessonDto) {
                     return new Lesson(lessonDto);
                 }),
-                lesson = lessons[0],
-                chatHistory = ChatHistory.loadSync(),
-                teacher = new Hamore(phraseBook, lesson);
+                hamore;
 
-            new View(document, chat, lessons);
+            new View(document, chat, lessons, function (index) {
+                hamore = new Hamore(phraseBook, lessons[index]);
+            });
 
             chat.on('load', function (e) {
                 onNewMessage(this, e.messages);
@@ -26,15 +26,17 @@ define(['chat', 'chatHistory', 'lesson', 'phraseBook', 'data', 'view', 'hamore']
                 }
             });
 
-            chat.loadHistory(chatHistory);
+            chat.loadHistory(new ChatHistory());
 
             function onNewMessage(chat, messages) {
                 var m = messages,
                     msg = m[m.length - 1];
 
-                var answerMsgs = teacher.answer(msg);
-                answerMsgs.forEach(function (msg) {
-                    moreChat.sendMessage(msg);
+                var answerMsgs = hamore.answer(msg);
+                answerMsgs.forEach(function (msg, index) {
+                    setTimeout(function () {
+                        moreChat.sendMessage(msg);
+                    }, index * 750);
                 });
             }
         };

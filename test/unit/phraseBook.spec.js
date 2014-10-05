@@ -88,25 +88,25 @@ define(['chai', 'app/phraseBook'], function (chai, PhraseBook) {
         });
 
         describe('asking for word', function () {
-            it('should format template phrase with #{ru}', function () {
+            it('should format template phrase with ${ru}', function () {
                 var book = new PhraseBook(createStubDictionary({
-                    questions: ['#{ru}']
+                    questions: ['${ru}']
                 }));
 
                 expect(book.askFor({ russian: 'слово' })).to.eq('слово');
             });
 
-            it('should format template phrase with #{he}', function () {
+            it('should format template phrase with ${he}', function () {
                 var book = new PhraseBook(createStubDictionary({
-                    questions: ['#{he}']
+                    questions: ['${he}']
                 }));
 
                 expect(book.askFor({ hebrew: 'иврит' })).to.eq('иврит');
             });
 
-            it('should format template phrase with #{tr}', function () {
+            it('should format template phrase with ${tr}', function () {
                 var book = new PhraseBook(createStubDictionary({
-                    questions: ['#{tr}']
+                    questions: ['${tr}']
                 }));
 
                 expect(book.askFor({ translit: 'ivrit' })).to.eq('ivrit');
@@ -114,15 +114,15 @@ define(['chai', 'app/phraseBook'], function (chai, PhraseBook) {
 
             it('should not format template phrase with unknown tag', function () {
                 var book = new PhraseBook(createStubDictionary({
-                    questions: ['#{xy}']
+                    questions: ['${xy}']
                 }));
 
-                expect(book.askFor({ xy: 'no way!' })).to.eq('#{xy}');
+                expect(book.askFor({ xy: 'no way!' })).to.eq('${xy}');
             });
 
             it('is able to do multiple replacements', function () {
                 var book = new PhraseBook(createStubDictionary({
-                    questions: ['#{he}#{tr} #{tr}#{he}']
+                    questions: ['${he}${tr} ${tr}${he}']
                 }));
 
                 expect(book.askFor({
