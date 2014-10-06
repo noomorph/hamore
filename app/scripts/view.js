@@ -34,11 +34,19 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
     }
 
     function show(el) {
-        el.style.removeProperty('display');
+        if (el.style.display === 'none') {
+            el.style.removeProperty('display');
+        } else {
+            el.style.setProperty('display', 'initial');
+        }
     }
 
     function hide(el) {
-        el.style.setProperty('display', 'none');
+        if (el.style.display === 'initial') {
+            el.style.removeProperty('display');
+        } else {
+            el.style.setProperty('display', 'none');
+        }
     }
 
     View.prototype.fillChapterSelection = function (lessons, index) {
