@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         // The actual grunt server settings
         connect: {
             options: {
-                port: 8080,
+                port: 80,
                 livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: '0.0.0.0'
@@ -129,11 +129,11 @@ module.exports = function (grunt) {
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
-                relativeAssets: false,
                 assetCacheBuster: false
             },
             dist: {
                 options: {
+                    httpPath: '/hamore/',
                     generatedImagesDir: '<%= yeoman.dist %>/images/generated'
                 }
             },

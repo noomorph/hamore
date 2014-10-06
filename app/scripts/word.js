@@ -1,4 +1,4 @@
-define(['cache'], function (cache) {
+define(['./cache'], function (cache) {
     'use strict';
 
     var frequencies = cache.get('frequencies');

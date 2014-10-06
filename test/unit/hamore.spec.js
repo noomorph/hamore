@@ -1,16 +1,17 @@
 /* jshint expr: true */
-define(['chai', 'app/hamore'], function (chai, Hamore) {
+define(['chai', 'app/word', 'app/hamore'], function (chai, Word, Hamore) {
     'use strict';
 
     var expect = chai.expect;
 
     describe('ha-More:', function () {
-        var phraseBook, lesson, hamore;
+        var phraseBook, lesson, hamore, word;
 
         beforeEach(function () {
             lesson = {
                 getNextWord: function () {
-                    return { hebrew: 'word' };
+                    word = new Word({ hebrew: 'word' }, function () {});
+                    return word;
                 }
             };
 
@@ -48,7 +49,7 @@ define(['chai', 'app/hamore'], function (chai, Hamore) {
         });
 
         it('asks for word at start', function () {
-            expect(hamore.answer()[1]).to.eql(['askFor', { hebrew: 'word' }]);
+            expect(hamore.answer()[1]).to.eql(['askFor', word]);
         });
 
         it('appraises if words match', function () {
@@ -58,12 +59,12 @@ define(['chai', 'app/hamore'], function (chai, Hamore) {
 
         it('asks for next word if words match', function () {
             hamore.answer();
-            expect(hamore.answer({ text: 'word' })[1]).to.eql(['askFor', { hebrew: 'word' }]);
+            expect(hamore.answer({ text: 'word' })[1]).to.eql(['askFor', word]);
         });
 
         it('corrects if words do not match', function () {
             hamore.answer();
-            expect(hamore.answer({ text: 'w3rD' })[0]).to.eql(['correctMistake', { hebrew: 'word' }]);
+            expect(hamore.answer({ text: 'w3rD' })[0]).to.eql(['correctMistake', word]);
         });
     });
 });
