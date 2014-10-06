@@ -1,4 +1,4 @@
-define(function () {
+define(['cache'], function (cache) {
     'use strict';
 
     function Hamore(phraseBook, lesson) {
@@ -13,6 +13,7 @@ define(function () {
 
     function askForWord(hamore) {
         hamore.word = hamore.lesson.getNextWord();
+        hamore.word.markAsUsed();
         return hamore.phraseBook.askFor(hamore.word);
     }
 
@@ -28,6 +29,7 @@ define(function () {
     }
 
     function appraise(hamore) {
+        cache.save('frequencies');
         return hamore.phraseBook.appraise();
     }
 

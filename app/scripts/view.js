@@ -61,20 +61,8 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
     };
 
     View.prototype.checkDirection = function (message) {
-        var rtl;
-
-        if (!message) {
-            return 'rtl';
-        }
-
-        if (typeof message === 'string') {
-            rtl = /[\u05D0-\u05F4]/.test(message);
-        } else {
-            rtl = /[\u05D0-\u05F4]/.test(message.text);
-            message.rtl = rtl;
-        }
-
-        return rtl ? 'rtl' : 'ltr';
+        message.rtl = message.from !== 'more';
+        return message.rtl ? 'rtl' : 'ltr';
     };
 
     View.prototype.loadMessages = function (messages) {
@@ -146,15 +134,6 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
         }
     };
 
-    View.prototype.fixRTL = function () {
-        var input = this.els.input,
-        currentDir = this.checkDirection(input.value);
-
-        if (input.dir !== currentDir) {
-            input.dir = currentDir;
-        }
-    };
-
     View.prototype.attachListeners = function (chat) {
         var self = this,
             you = chat.register('you');
@@ -184,9 +163,6 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             self.updateVirtualKeyboardHeight(false);
             self.scrollToBottom();
         });
-
-        this.els.input.addEventListener('focus', this.fixRTL.bind(this));
-        this.els.input.addEventListener('keydown', this.fixRTL.bind(this));
 
         this.els.input.addEventListener('keydown', function (e) {
             var input = self.els.input;

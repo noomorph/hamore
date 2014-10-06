@@ -26,6 +26,8 @@ define(['word'], function (Word) {
 
             return word;
         }, this);
+
+        reorderWords(this.words);
     }
 
     function randomExpIndex(len) {

@@ -1,5 +1,7 @@
-define(function () {
+define(['cache'], function (cache) {
     'use strict';
+
+    var frequencies = cache.get('frequencies');
 
     function empty() { }
 
@@ -8,7 +10,7 @@ define(function () {
             this.hebrew = wordDto.hebrew;
             this.russian = wordDto.russian;
             this.translit = wordDto.translit;
-            this.timesUsed = wordDto.timesUsed;
+            this.timesUsed = frequencies[this.hebrew] || 0;
         } else {
             this.hebrew = '';
             this.russian = '';
@@ -20,7 +22,9 @@ define(function () {
     }
 
     Word.prototype.markAsUsed = function () {
-        this.timesUsed++;
+        this.timesUsed += 1;
+        frequencies[this.hebrew] = this.timesUsed;
+
         this.onTimesUsedChanged();
     };
 
