@@ -22,6 +22,9 @@ define(['chai', 'app/word', 'app/hamore'], function (chai, Word, Hamore) {
                 askFor: function (word) {
                     return ['askFor', word];
                 },
+                giveHint: function (word) {
+                    return ['giveHint', word];
+                },
                 correctMistake: function (word) {
                     return ['correctMistake', word];
                 },
@@ -62,8 +65,14 @@ define(['chai', 'app/word', 'app/hamore'], function (chai, Word, Hamore) {
             expect(hamore.answer({ text: 'word' })[1]).to.eql(['askFor', word]);
         });
 
-        it('corrects if words do not match', function () {
+        it('gives hint for 1st time if words do not match', function () {
             hamore.answer();
+            expect(hamore.answer({ text: 'w3rD' })[0]).to.eql(['giveHint', word]);
+        });
+
+        it('corrects if words do not match for the second time', function () {
+            hamore.answer();
+            hamore.answer({ text: 'w3rD' });
             expect(hamore.answer({ text: 'w3rD' })[0]).to.eql(['correctMistake', word]);
         });
     });

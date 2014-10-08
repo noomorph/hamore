@@ -4,6 +4,7 @@ define(function () {
     var KEYS = {
         GREETINGS: 'greetings',
         QUESTIONS: 'questions',
+        HINTS: 'hints',
         CORRECTIONS: 'corrections',
         APPRAISALS: 'appraisals',
         EXCUSATIONS: 'excusations'
@@ -71,6 +72,10 @@ define(function () {
 
     PhraseBook.prototype.askFor = function (word) {
         return formatRandomPhrase(this.dictionary, KEYS.QUESTIONS, word);
+    };
+
+    PhraseBook.prototype.giveHint = function (word) {
+        return formatRandomPhrase(this.dictionary, KEYS.HINTS, word);
     };
 
     PhraseBook.prototype.correctMistake = function (word) {

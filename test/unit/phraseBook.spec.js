@@ -8,6 +8,7 @@ define(['chai', 'app/phraseBook'], function (chai, PhraseBook) {
             var dictionary = {
                 'greetings': ['greeting'],
                 'questions': ['question'],
+                'hints': ['hint'],
                 'corrections': ['correction'],
                 'appraisals': ['appraisal'],
                 'excusations': ['excusation']

@@ -25,7 +25,9 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             input: $('#message-input')
         };
 
-        var lessonIndex = localStorage.getItem('lessonIndex') || 0;
+        var lessonIndex = +localStorage.lessonIndex || 0;
+        lessonIndex = Math.min(lessons.length - 1, lessonIndex);
+
         this.fillChapterSelection(lessons, lessonIndex);
         this.attachListeners(chat);
 
@@ -100,13 +102,8 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             messages: [message]
         }));
 
-        this.updateVirtualKeyboardHeight(true);
         this.scrollToBottom();
     };
-
-    View.prototype.startTyping = function () { };
-
-    View.prototype.stopTyping = function () { };
 
     View.prototype.getVirtualKeyboardHeight = function () {
         if (this.isTyping) {
@@ -114,7 +111,7 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
                 return 225;
             }
             if (navigator.userAgent.match(/(iphone|ipod|ipad)/i)) {
-                return 261;
+                return 216;
             }
         }
 
@@ -138,6 +135,7 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             lastMessage = this.els.messages.lastElementChild;
 
         if (lastMessage) {
+            this.els.chatBox.refresh();
             chatBox.scrollToElement(lastMessage, 'auto');
         }
     };
@@ -162,6 +160,11 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             e.preventDefault();
         });
 
+        this.els.input.addEventListener('focus', function () {
+            self.updateVirtualKeyboardHeight(true);
+            self.scrollToBottom();
+        });
+
         this.els.input.addEventListener('deactivate', function () {
             self.updateVirtualKeyboardHeight(false);
             self.scrollToBottom();
@@ -178,17 +181,11 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             if (e.which === 13 && input.value) {
                 you.sendMessage(input.value);
                 input.value = '';
-                e.preventDefault();
-                return false;
             }
-        });
 
-        chat.on('startTyping', function (e) {
-            self.startTyping(e.from);
-        });
-
-        chat.on('stopTyping', function (e) {
-            self.stopTyping(e.from);
+            if (e.which === 13) {
+                e.preventDefault();
+            }
         });
 
         chat.on('load', function (e) {
@@ -196,7 +193,6 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
         });
 
         chat.on('newMessage', function (e) {
-            self.stopTyping(e.message.from);
             self.appendMessage(e.message);
         });
     };

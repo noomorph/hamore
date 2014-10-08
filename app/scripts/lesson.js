@@ -6,11 +6,9 @@ define(['word'], function (Word) {
 
         if (lessonDto) {
             this.name = lessonDto.name;
-            this.url = lessonDto.url;
             this.words = lessonDto.words;
         } else {
             this.name = '';
-            this.url = '';
             this.words = [];
         }
 

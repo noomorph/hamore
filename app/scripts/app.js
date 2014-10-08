@@ -15,6 +15,7 @@ define(['chat', 'chatHistory', 'lesson', 'phraseBook', 'data', 'view', 'hamore']
                 hamore;
 
             new View(document, chat, lessons, function (index) {
+                localStorage.lessonIndex = index;
                 hamore = new Hamore(phraseBook, lessons[index]);
             });
 

@@ -1,10 +1,11 @@
-define(['./cache'], function (cache) {
+define(['./common/utils', './cache'], function (util, cache) {
     'use strict';
 
     function Hamore(phraseBook, lesson) {
         this.lesson = lesson;
         this.phraseBook = phraseBook;
         this.word = null;
+        this.gaveHint = false;
     }
 
     function greet(hamore) {
@@ -14,6 +15,7 @@ define(['./cache'], function (cache) {
     function askForWord(hamore) {
         hamore.word = hamore.lesson.getNextWord();
         hamore.word.markAsUsed();
+        hamore.gaveHint = false;
         return hamore.phraseBook.askFor(hamore.word);
     }
 
@@ -22,6 +24,10 @@ define(['./cache'], function (cache) {
               actual = word.trim();
 
         return expected === actual;
+    }
+
+    function giveHint(hamore) {
+        return hamore.phraseBook.giveHint(hamore.word);
     }
 
     function correctWord(hamore) {
@@ -41,7 +47,12 @@ define(['./cache'], function (cache) {
         if (checkWord(this, message.text)) {
             return [appraise(this), askForWord(this)];
         } else {
-            return [correctWord(this)];
+            if (!this.gaveHint) {
+                this.gaveHint = true;
+                return [giveHint(this)];
+            } else {
+                return [correctWord(this)];
+            }
         }
     };
 

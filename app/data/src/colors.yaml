@@ -1,0 +1,117 @@
+name: 'Цвета'
+words:
+    - russian: 'цвет'
+      translit: 'цэва'
+      hebrew: 'צבע'
+
+    - russian: 'красный'
+      translit: 'адом'
+      hebrew: 'אדום'
+
+    - russian: 'красная'
+      translit: 'адума'
+      hebrew: 'אדומה'
+
+    - russian: 'оранжевый'
+      translit: 'катом'
+      hebrew: 'כתום'
+
+    - russian: 'оранжевая'
+      translit: 'ктума'
+      hebrew: 'כתומה'
+
+    - russian: 'желтый'
+      translit: 'цаhов'
+      hebrew: 'צהוב'
+
+    - russian: 'желтая'
+      translit: 'цеhуба'
+      hebrew: 'צהובה'
+
+    - russian: 'желтые'
+      translit: 'цеhубайм'
+      hebrew: 'צהובים'
+
+    - russian: 'зеленый'
+      translit: 'ярок'
+      hebrew: 'ירוק'
+
+    - russian: 'зеленая'
+      translit: 'ярука'
+      hebrew: 'ירוקה'
+
+    - russian: 'синий'
+      translit: 'кахоль'
+      hebrew: 'כחול'
+
+    - russian: 'синяя'
+      translit: 'кхула'
+      hebrew: 'כחולה'
+
+    - russian: 'голубой'
+      translit: 'тахоль'
+      hebrew: 'תכול'
+
+    - russian: 'голубая'
+      translit: 'тхула'
+      hebrew: 'תכולה'
+
+    - russian: 'фиолетовый'
+      translit: 'саголь'
+      hebrew: 'סגול'
+
+    - russian: 'фиолетовая'
+      translit: 'сгула'
+      hebrew: 'סגולה'
+
+    - russian: 'розовый'
+      translit: 'варод'
+      hebrew: 'ורוד'
+
+    - russian: 'розовая'
+      translit: 'вруда'
+      hebrew: 'ורודה'
+
+    - russian: 'коричневый'
+      translit: 'хум'
+      hebrew: 'חוּם'
+
+    - russian: 'коричневая'
+      translit: 'хума'
+      hebrew: 'חומה'
+
+    - russian: 'серый'
+      translit: 'афор'
+      hebrew: 'אפור'
+
+    - russian: 'серая'
+      translit: 'афора'
+      hebrew: 'אפורה'
+
+    - russian: 'белый'
+      translit: 'лаван'
+      hebrew: 'לָבָן'
+
+    - russian: 'белая'
+      translit: 'лавана'
+      hebrew: 'לבנה'
+
+    - russian: 'черный'
+      translit: 'шахор'
+      hebrew: 'שחור'
+
+    - russian: 'черная'
+      translit: 'шхора'
+      hebrew: 'שחורה'
+
+    - russian: 'золотой'
+      translit: 'заhов'
+      hebrew: 'זהוב'
+
+    - russian: 'золотая'
+      translit: 'зеhуба'
+      hebrew: 'זהובה'
+
+    - russian: 'серебро'
+      translit: 'кэсэф'
+      hebrew: 'קסף'
