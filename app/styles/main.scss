@@ -137,8 +137,7 @@ select::-ms-expand {
   width: 100%;
 }
 
-.chat-bubble,
-.chat-typing {
+.chat-bubble {
   background: #ddd;
   clear: both;
   display: block;
@@ -151,34 +150,16 @@ select::-ms-expand {
   margin-top: 0;
 }
 
-.chat-typing {
-  border-radius: 15px;
-}
-
-.chat-bubble[data-sender='more'],
-.chat-typing[data-sender='more'] {
+.chat-bubble[data-sender='more'] {
   background: #ffd37a;
+  border-radius: 15px 10px 10px 15px;
   float: left;
 }
 
-.chat-bubble[data-sender='you'],
-.chat-typing[data-sender='you'] {
-  background: #9e9;
-  float: right;
-}
-
-.chat-bubble[data-sender='more'] {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 10px;
-}
-
 .chat-bubble[data-sender='you'] {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 15px;
+  background: #9e9;
+  border-radius: 10px 15px 15px 10px;
+  float: right;
 }
 
 #hamore-logo {

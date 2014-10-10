@@ -20,7 +20,7 @@ define(['./common/utils', './cache'], function (util, cache) {
     }
 
     function checkWord(hamore, word) {
-        var expected = hamore.word.hebrew,
+        var expected = hamore.word.hebrew.replace(/[\u0590-\u05cf]/mg, ''), // no niqqud
               actual = word.trim();
 
         return expected === actual;

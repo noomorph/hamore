@@ -105,12 +105,25 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
         this.scrollToBottom();
     };
 
+    function isWindowsPhone() {
+        return (/iemobile/i).test(navigator.userAgent);
+    }
+
+    function isIPhone() {
+        return (/(iphone|ipod)/i).test(navigator.userAgent);
+    }
+
+    function isIPad() {
+        return (/ipad/i).test(navigator.userAgent);
+    }
+
     View.prototype.getVirtualKeyboardHeight = function () {
         if (this.isTyping) {
-            if (navigator.userAgent.match(/iemobile/i)) {
+            if (isWindowsPhone()) {
                 return 225;
             }
-            if (navigator.userAgent.match(/(iphone|ipod|ipad)/i)) {
+
+            if (isIPhone() || isIPad()) {
                 return 216;
             }
         }
@@ -175,16 +188,16 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             self.scrollToBottom();
         });
 
-        this.els.input.addEventListener('keydown', function (e) {
+        this.els.input.addEventListener('keyup', function (e) {
             var input = self.els.input;
 
             if (e.which === 13 && input.value) {
                 you.sendMessage(input.value);
                 input.value = '';
-            }
 
-            if (e.which === 13) {
-                e.preventDefault();
+                if (!isWindowsPhone()) {
+                    e.preventDefault();
+                }
             }
         });
 
