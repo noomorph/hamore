@@ -1,0 +1,125 @@
+name: 'Времена года'
+words:
+    - hebrew: 'עוֹנוֹת הַשַנַה'
+      translit: 'онот hашана'
+      russian: 'времена года'
+
+    - hebrew: 'שנָה'
+      translit: 'шана'
+      russian: 'год'
+
+    - hebrew: 'חוֹרֶף'
+      translit: 'хореф'
+      russian: 'зима'
+
+    - hebrew: 'אַבִיב'
+      translit: 'авив'
+      russian: 'весна'
+
+    - hebrew: 'קָיִץ'
+      translit: 'каиц'
+      russian: 'лето'
+
+    - hebrew: 'סתַיו'
+      translit: 'став'
+      russian: 'осень'
+
+    - hebrew: 'שֶלֶג'
+      translit: 'шелег'
+      russian: 'снег'
+
+    - hebrew: 'בַּרַד'
+      translit: 'барад'
+      russian: 'град'
+
+    - hebrew: 'קָר'
+      translit: 'кар'
+      russian: 'холодно'
+
+    - hebrew: 'קֶרַח'
+      translit: 'керах'
+      russian: 'лед'
+
+    - hebrew: 'חוֹשֶך'
+      translit: 'хошех'
+      russian: 'темнота'
+
+    - hebrew: 'פֶרח'
+      translit: 'пэрах'
+      russian: 'цветок'
+
+    - hebrew: 'עָלים'
+      translit: 'алим'
+      russian: 'листья'
+
+    - hebrew: 'עָלֶה'
+      translit: 'алэ'
+      russian: 'листок'
+
+    - hebrew: 'ציפור'
+      translit: 'ципор'
+      russian: 'птица'
+
+    - hebrew: 'שלוּלִית'
+      translit: 'шлулит'
+      russian: 'лужа'
+
+    - hebrew: 'מֶזֶג אַוְוִיר'
+      translit: 'мезэг авир'
+      russian: 'погода'
+
+    - hebrew: 'אָווִיר'
+      translit: 'авир'
+      russian: 'воздух'
+
+    - hebrew: 'ים'
+      translit: 'ям'
+      russian: 'море'
+
+    - hebrew: 'חם'
+      translit: 'хам'
+      russian: 'жарко'
+
+    - hebrew: 'חופש'
+      translit: 'хофеш'
+      russian: 'свобода, отпуск'
+
+    - hebrew: 'חוּפשָה'
+      translit: 'хуфша'
+      russian: 'отпуск'
+
+    - hebrew: 'חָמים'
+      translit: 'хамим'
+      russian: 'тепловато'
+
+    - hebrew: 'קָרִיר'
+      translit: 'карир'
+      russian: 'прохладно'
+
+    - hebrew: 'גֶשֶם'
+      translit: 'гешем'
+      russian: 'дождь'
+
+    - hebrew: 'עָצוּב'
+      translit: 'ацув'
+      russian: 'грустно'
+
+    - hebrew: 'בַּרַק'
+      translit: 'барак'
+      russian: 'молния'
+
+    - hebrew: 'רַעַם'
+      translit: 'раам'
+      russian: 'гром'
+
+    - hebrew: 'שָלֶכֶת'
+      translit: 'шалехет'
+      russian: 'листва (листопад)'
+
+    - hebrew: 'סְעָרָה'
+      translit: 'саара'
+      russian: 'буря'
+
+    - hebrew: 'שֶעַרַה'
+      translit: 'саара'
+      russian: 'волосина'
