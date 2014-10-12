@@ -188,12 +188,14 @@ define(['templates', 'iscroll'], function (templates, IScroll) {
             self.scrollToBottom();
         });
 
-        this.els.input.addEventListener('keyup', function (e) {
+        this.els.input.addEventListener('keydown', function (e) {
             var input = self.els.input;
 
-            if (e.which === 13 && input.value) {
-                you.sendMessage(input.value);
-                input.value = '';
+            if (e.which === 13) {
+                if (input.value) {
+                    you.sendMessage(input.value);
+                    input.value = '';
+                }
 
                 if (!isWindowsPhone()) {
                     e.preventDefault();
