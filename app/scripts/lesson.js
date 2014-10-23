@@ -28,12 +28,14 @@ define(['word'], function (Word) {
         reorderWords(this.words);
     }
 
-    function randomExpIndex(len) {
-        var U = Math.random(),
-            E = -Math.log(U) / 20,
-            r = Math.min(0.999, E);
+    function uniformRandomIndexAmongTheLeastUsedWords(arr) {
+        var i = 0;
 
-        return Math.floor(r * len);
+        while (i < arr.length && arr[i].timesUsed === arr[0].timesUsed) {
+            i++;
+        }
+
+        return Math.floor(Math.random() * i);
     }
 
     function reorderWords(words) {
@@ -49,7 +51,7 @@ define(['word'], function (Word) {
     }
 
     Lesson.prototype.getNextWord = function () {
-        var index = randomExpIndex(this.words.length),
+        var index = uniformRandomIndexAmongTheLeastUsedWords(this.words),
             nextWord = this.words.splice(index, 1)[0];
 
         if (nextWord) {
