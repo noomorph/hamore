@@ -1,0 +1,65 @@
+name: 'Дни недели'
+words:
+  - hebrew: 'יום'
+    translit: 'йом'
+    russian: 'день'    
+
+  - hebrew: 'יום ראשון'
+    translit: 'йом ришон'
+    russian: 'воскресенье'
+
+  - hebrew: 'יום שני'
+    translit: 'йом шени'
+    russian: 'понедельник'
+
+  - hebrew: 'יום שלישי'
+    translit: 'йом шлиши'
+    russian: 'вторник'
+
+  - hebrew: 'יום רביעי'
+    translit: 'йом ревии'
+    russian: 'среда'
+
+  - hebrew: 'יום חמישי'
+    translit: 'йом хамиши'
+    russian: 'четверг'
+
+  - hebrew: 'יום שישי'
+    translit: 'йом шиши'
+    russian: 'пятница'
+
+  - hebrew: 'יום שבת'
+    translit: 'йом шабат'
+    russian: 'суббота'
+
+  - hebrew: 'שבוע'
+    translit: 'шавуа'
+    russian: 'неделя'
+
+  - hebrew: 'חודש'
+    translit: 'ходэш'
+    russian: 'месяц'
+
+  - hebrew: 'שנה'
+    translit: 'шана'
+    russian: 'год'
+
+  - hebrew: 'מחר'
+    translit: 'махар'
+    russian: 'завтра'
+
+  - hebrew: 'אתמול'
+    translit: 'этмоль'
+    russian: 'вчера'
+
+  - hebrew: 'היום'
+    translit: 'hайом'
+    russian: 'сегодня'
+
+  - hebrew: 'מחרותים'
+    translit: 'махротаим'
+    russian: 'послезавтра'
+
+  - hebrew: 'שילשון'
+    translit: 'шильшон'
+    russian: 'позавчера'

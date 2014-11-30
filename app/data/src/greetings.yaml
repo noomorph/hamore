@@ -1,0 +1,97 @@
+name: 'Приветствия'
+words:
+    - hebrew: 'שלום'
+      translit: 'шалом'
+      russian: 'здравствуйте'
+
+    - hebrew: 'בוקר טוב'
+      translit: 'бокэр тов'
+      russian: 'доброе утро'
+
+    - hebrew: 'יום טוב'
+      translit: 'йом тов'
+      russian: 'хорошего дня'
+
+    - hebrew: 'ערב טוב'
+      translit: 'эрэв тов'
+      russian: 'добрый вечер'
+
+    - hebrew: 'לילה טוב'
+      translit: 'ляйля тов'
+      russian: 'спокойной ночи'
+
+    - hebrew: 'להתראות'
+      translit: 'лэhитраот'
+      russian: 'до свидания'
+
+    - hebrew: 'נעים מאוד'
+      translit: 'наим мэод'
+      russian: 'очень приятно'
+
+    - hebrew: 'תודה'
+      translit: 'тода'
+      russian: 'спасибо'
+
+    - hebrew: 'בבקשה'
+      translit: 'бэвакаша'
+      russian: 'пожалуйста'
+
+    - hebrew: 'מה נשמע'
+      translit: 'ма нишма'
+      russian: 'как дела'
+
+    - hebrew: 'מה חדש'
+      translit: 'ма хадаш'
+      russian: 'что нового'
+
+    - hebrew: 'מצוין'
+      translit: 'мэцуян'
+      russian: 'отлично'
+
+    - hebrew: 'טוב מאוד'
+      translit: 'тов мэод'
+      russian: 'очень хорошо'
+
+    - hebrew: 'מה שלומך'
+      translit: 'ма шломха'
+      russian: 'как поживаешь'
+
+    - hebrew: 'בסדר'
+      translit: 'бэсэдэр'
+      russian: 'в порядке'
+
+    - hebrew: 'בסדר גמור'
+      translit: 'бэсэдэр гамур'
+      russian: 'в полном порядке'
+
+    - hebrew: 'הכל בסדר'
+      translit: 'hаколь бэсэдэр'
+      russian: 'все в порядке'
+
+    - hebrew: 'איך אתה מרגיש'
+      translit: 'эйх ата маргиш'
+      russian: 'как ты себя чувствуешь'
+
+    - hebrew: 'טוב'
+      translit: 'тов'
+      russian: 'хорошо'
+
+    - hebrew: 'רע'
+      translit: 'ра'
+      russian: 'плохо'
+
+    - hebrew: 'לא רע'
+      translit: 'ле ра'
+      russian: 'неплохо'
+
+    - hebrew: 'ככה ככה'
+      translit: 'каха каха'
+      russian: 'так себе'
+
+    - hebrew: 'יהיה טוב'
+      translit: 'иhие тов'
+      russian: 'будет хорошо'
+
+    - hebrew: 'שום דבר'
+      translit: 'шум давар'
+      russian: 'ничего'

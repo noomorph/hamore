@@ -1,0 +1,73 @@
+name: 'Местоимения'
+words:
+    - hebrew: 'אני'
+      translit: 'ани'
+      russian: 'я'
+
+    - hebrew: 'אתה'
+      translit: 'ата'
+      russian: 'ты (м.р.)'
+
+    - hebrew: 'את'
+      translit: 'ат'
+      russian: 'ты (ж.р.)'
+
+    - hebrew: 'הוא'
+      translit: 'hу'
+      russian: 'он'
+
+    - hebrew: 'היא'
+      translit: 'hи'
+      russian: 'она'
+
+    - hebrew: 'אנחנו'
+      translit: 'анахну'
+      russian: 'мы'
+
+    - hebrew: 'אתם'
+      translit: 'атэм'
+      russian: 'вы (м.р.)'
+
+    - hebrew: 'אתן'
+      translit: 'атэн'
+      russian: 'вы (ж.р.)'
+
+    - hebrew: 'הם'
+      translit: 'hэм'
+      russian: 'они (м.р.)'
+
+    - hebrew: 'הן'
+      translit: 'hэн'
+      russian: 'они (ж.р.)'
+
+    - hebrew: 'לי'
+      translit: 'ли'
+      russian: 'мне'
+
+    - hebrew: 'לך'
+      translit: 'лэха'
+      russian: 'тебе (м.р.)'
+
+    - hebrew: 'לך'
+      translit: 'лах'
+      russian: 'тебе (ж.р.)'
+
+    - hebrew: 'לנו'
+      translit: 'лану'
+      russian: 'нам'
+
+    - hebrew: 'לכם'
+      translit: 'лахэм'
+      russian: 'вам (м.р.)'
+
+    - hebrew: 'לכן'
+      translit: 'лахэн'
+      russian: 'вам (ж.р.)'
+
+    - hebrew: 'להם'
+      translit: 'лаhэм'
+      russian: 'им (м.р.)'
+
+    - hebrew: 'להן'
+      translit: 'лаhэн'
+      russian: 'им (ж.р.)'

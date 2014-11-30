@@ -1,0 +1,177 @@
+name: 'Семья'
+words:
+    - hebrew: 'משפחה'
+      translit: 'мишпаха'
+      russian: 'семья'
+
+    - hebrew: 'בעל'
+      translit: 'бааль'
+      russian: 'муж'
+
+    - hebrew: 'אישה'
+      translit: 'иша'
+      russian: 'жена'
+
+    - hebrew: 'אמא'
+      translit: 'има'
+      russian: 'мама'
+
+    - hebrew: 'אבא'
+      translit: 'аба'
+      russian: 'папа'
+
+    - hebrew: 'סבה'
+      translit: 'саба'
+      russian: 'дедушка'
+
+    - hebrew: 'סבתה'
+      translit: 'сабта'
+      russian: 'бабушка'
+
+    - hebrew: 'דוד'
+      translit: 'дод'
+      russian: 'дядя'
+
+    - hebrew: 'דודה'
+      translit: 'дода'
+      russian: 'тетя'
+
+    - hebrew: 'בן'
+      translit: 'бэн'
+      russian: 'сын'
+
+    - hebrew: 'בת'
+      translit: 'бат'
+      russian: 'дочка'
+
+    - hebrew: 'אחות'
+      translit: 'ахот'
+      russian: 'сестра'
+
+    - hebrew: 'אח'
+      translit: 'ах'
+      russian: 'брат'
+
+    - hebrew: 'נכד'
+      translit: 'нэхэд'
+      russian: 'внук'
+
+    - hebrew: 'נכדה'
+      translit: 'нэхэда'
+      russian: 'внучка'
+
+    - hebrew: 'אחיין'
+      translit: 'ахьян'
+      russian: 'племянник'
+
+    - hebrew: 'אחיינית'
+      translit: 'ахьянит'
+      russian: 'племянница'
+
+    - hebrew: 'בן דוד'
+      translit: 'бэн дод'
+      russian: 'двоюродный брат'
+
+    - hebrew: 'קרובים'
+      translit: 'каровим'
+      russian: 'родственники'
+
+    - hebrew: 'קרוב'
+      translit: 'каров'
+      russian: 'близко'
+
+    - hebrew: 'בן חורג'
+      translit: 'бэн хорэг'
+      russian: 'приемный сын'
+
+    - hebrew: 'בת חורגת'
+      translit: 'бат хорэгэт'
+      russian: 'приемная дочь'
+
+    - hebrew: 'חם'
+      translit: 'хам'
+      russian: 'свекр'
+
+    - hebrew: 'חמות'
+      translit: 'хамот'
+      russian: 'свекровь'
+
+    - hebrew: 'חותן'
+      translit: 'хотэн'
+      russian: 'тесть'
+
+    - hebrew: 'חותנת'
+      translit: 'хотэнэт'
+      russian: 'теща'
+
+    - hebrew: 'מצווה'
+      translit: 'мицва'
+      russian: 'завещание'
+
+    - hebrew: 'חתונה'
+      translit: 'хатуна'
+      russian: 'свадьба'
+
+    - hebrew: 'חתן'
+      translit: 'хатан'
+      russian: 'жених'
+
+    - hebrew: 'כלה'
+      translit: 'каля'
+      russian: 'невеста'
+
+    - hebrew: 'גיס'
+      translit: 'гис'
+      russian: 'муж сестры'
+
+    - hebrew: 'גיסה'
+      translit: 'гиса'
+      russian: 'жена брата'
+
+    - hebrew: 'זוג'
+      translit: 'зуг'
+      russian: 'пара'
+
+    - hebrew: 'בן זוג'
+      translit: 'бэн зуг'
+      russian: 'партнер'
+
+    - hebrew: 'בת זוג'
+      translit: 'бат зуг'
+      russian: 'партнерша'
+
+    - hebrew: 'חבר'
+      translit: 'хавэр'
+      russian: 'друг'
+
+    - hebrew: 'ידיד'
+      translit: 'ядид'
+      russian: 'приятель'
+
+    - hebrew: 'אהוב'
+      translit: 'аhув'
+      russian: 'любимый'
+
+    - hebrew: 'מאהב'
+      translit: 'мэаhэв'
+      russian: 'любовник'
+
+    - hebrew: 'נשוי'
+      translit: 'насуй'
+      russian: 'женатый'
+
+    - hebrew: 'רווק'
+      translit: 'равак'
+      russian: 'холостой'
+
+    - hebrew: 'גרוש'
+      translit: 'гаруш'
+      russian: 'разведен'
+
+    - hebrew: 'להתחתן'
+      translit: 'льхитхатэн'
+      russian: 'жениться'
+
+    - hebrew: 'יחסים'
+      translit: 'яхасим'
+      russian: 'отношения'

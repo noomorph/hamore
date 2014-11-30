@@ -161,26 +161,3 @@ select::-ms-expand {
   border-radius: 10px 15px 15px 10px;
   float: right;
 }
-
-#hamore-logo {
-  background-color: rgb(255, 244, 54);
-  background-image: image-url('startup-2048x1496.png');
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  bottom: 0;
-  display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-}
-
-@media only screen
-and (orientation : portrait) {
-  #hamore-logo {
-    background-image: image-url('startup-640x920.png');
-    background-position: center;
-  }
-}
