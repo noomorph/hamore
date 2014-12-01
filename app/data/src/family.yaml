@@ -25,7 +25,7 @@ words:
       russian: 'дедушка'
 
     - hebrew: 'סבתה'
-      translit: 'сабта'
+      translit: 'савта'
       russian: 'бабушка'
 
     - hebrew: 'דוד'
@@ -57,15 +57,15 @@ words:
       russian: 'внук'
 
     - hebrew: 'נכדה'
-      translit: 'нэхэда'
+      translit: 'нэхда'
       russian: 'внучка'
 
     - hebrew: 'אחיין'
-      translit: 'ахьян'
+      translit: 'ахъян'
       russian: 'племянник'
 
     - hebrew: 'אחיינית'
-      translit: 'ахьянит'
+      translit: 'ахъянит'
       russian: 'племянница'
 
     - hebrew: 'בן דוד'
@@ -106,7 +106,7 @@ words:
 
     - hebrew: 'מצווה'
       translit: 'мицва'
-      russian: 'завещание'
+      russian: 'заповедь'
 
     - hebrew: 'חתונה'
       translit: 'хатуна'
@@ -117,7 +117,7 @@ words:
       russian: 'жених'
 
     - hebrew: 'כלה'
-      translit: 'каля'
+      translit: 'кала'
       russian: 'невеста'
 
     - hebrew: 'גיס'
