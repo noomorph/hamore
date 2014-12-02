@@ -56,10 +56,14 @@ words:
     translit: 'hайом'
     russian: 'сегодня'
 
-  - hebrew: 'מחרותים'
+  - hebrew: 'מחרתיים'
     translit: 'махротаим'
     russian: 'послезавтра'
 
-  - hebrew: 'שילשון'
-    translit: 'шильшон'
+  - hebrew: 'שילשום'
+    translit: 'шильшом'
     russian: 'позавчера'
+
+  - hebrew: 'בעוד'
+    translit: 'бэод'
+    russian: 'через (сколько-то времени)'
