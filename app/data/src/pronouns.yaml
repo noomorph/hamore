@@ -71,3 +71,179 @@ words:
     - hebrew: 'להן'
       translit: 'лаhэн'
       russian: 'им (ж.р.)'
+
+    - hebrew: 'של מי'
+      translit: 'шель ми'
+      russian: 'чей'
+
+    - hebrew: 'שלי'
+      translit: 'шели'
+      russian: 'мой'
+
+    - hebrew: 'שלך'
+      translit: 'шелха'
+      russian: 'твой (м.р.)'
+
+    - hebrew: 'שלך'
+      translit: 'шелах'
+      russian: 'твой (ж.р.)'
+
+    - hebrew: 'שלנו'
+      translit: 'шелану'
+      russian: 'наш'
+
+    - hebrew: 'שלו'
+      translit: 'шело'
+      russian: 'его (чей?)'
+
+    - hebrew: 'שלה'
+      translit: 'шела'
+      russian: 'ее (чей?)'
+
+    - hebrew: 'שלכם'
+      translit: 'шелахем'
+      russian: 'ваш (м.р.)'
+
+    - hebrew: 'שלכן'
+      translit: 'шелахен'
+      russian: 'ваш (ж.р.)'
+
+    - hebrew: 'שלהם'
+      translit: 'шелаhэм'
+      russian: 'их (чей? м.р.)'
+
+    - hebrew: 'שלהן'
+      translit: 'шели'
+      russian: 'их (чей? ж.р.)'
+
+    - hebrew: 'את'
+      translit: 'эт'
+      russian: 'кого? что?'
+
+    - hebrew: 'אותי'
+      translit: 'оти'
+      russian: 'меня'
+
+    - hebrew: 'אותך'
+      translit: 'отха'
+      russian: 'тебя (м.р.)'
+
+    - hebrew: 'אותך'
+      translit: 'отах'
+      russian: 'тебя (ж.р.)'
+
+    - hebrew: 'אותנו'
+      translit: 'отану'
+      russian: 'нас'
+
+    - hebrew: 'אותו'
+      translit: 'ото'
+      russian: 'его (кого?)'
+
+    - hebrew: 'אותה'
+      translit: 'ота'
+      russian: 'ее (кого?)'
+
+    - hebrew: 'אותכם'
+      translit: 'отхем'
+      russian: 'вас (кого? м.р.)'
+
+    - hebrew: 'אותכן'
+      translit: 'отхен'
+      russian: 'вас (кого? ж.р.)'
+
+    - hebrew: 'אותם'
+      translit: 'отам'
+      russian: 'их (кого? м.р)'
+
+    - hebrew: 'אותן'
+      translit: 'отан'
+      russian: 'их (кого? ж.р.)'
+
+    - hebrew: 'עם'
+      translit: 'им'
+      russian: '(вместе) с'
+
+    - hebrew: 'איתי'
+      translit: 'ити'
+      russian: 'со мной'
+
+    - hebrew: 'איתך'
+      translit: 'итха'
+      russian: 'с тобой (м.р.)'
+
+    - hebrew: 'איתך'
+      translit: 'итах'
+      russian: 'с тобой (ж.р.)'
+
+    - hebrew: 'איתנו'
+      translit: 'итану'
+      russian: 'с нами'
+
+    - hebrew: 'איתכם'
+      translit: 'итхэм'
+      russian: 'с вами (м.р.)'
+
+    - hebrew: 'איתכן'
+      translit: 'итхэн'
+      russian: 'с вами (ж.р.)'
+
+    - hebrew: 'איתו'
+      translit: 'ито'
+      russian: 'с ним'
+
+    - hebrew: 'איתה'
+      translit: 'ита'
+      russian: 'с ней'
+
+    - hebrew: 'איתם'
+      translit: 'итам'
+      russian: 'с ними (м.р.)'
+
+    - hebrew: 'איתן'
+      translit: 'итан'
+      russian: 'с ними (ж.р.)'
+
+    - hebrew: 'על'
+      translit: 'аль'
+      russian: 'на (про, об)'
+
+    - hebrew: 'עָלַי'
+      translit: 'алай'
+      russian: 'на (обо) мне'
+
+    - hebrew: 'עָלֶיךָ'
+      translit: 'алэха'
+      russian: 'на (о) тебе (м.р.)'
+
+    - hebrew: 'עָלַיִך'
+      translit: 'алаих'
+      russian: 'на (о) тебе (ж.р.)'
+
+    - hebrew: 'עָלֵינוּ'
+      translit: 'алэну'
+      russian: 'на (о) нас'
+
+    - hebrew: 'עָלָיו'
+      translit: 'алав'
+      russian: 'на (о) нем'
+
+    - hebrew: 'עָלֶיהָּ'
+      translit: 'алейha'
+      russian: 'на (о) ней'
+
+    - hebrew: 'עליכם'
+      translit: 'алейхэм'
+      russian: 'на (о) вас (м.р.)'
+
+    - hebrew: 'עליכן'
+      translit: 'алейхэн'
+      russian: 'на (о) вас (ж.р.)'
+
+    - hebrew: 'עליהם'
+      translit: 'алейhэн'
+      russian: 'на (о) них (м.р.)'
+
+    - hebrew: 'עליהן'
+      translit: 'алейhэн'
+      russian: 'на (о) них (ж.р.)'

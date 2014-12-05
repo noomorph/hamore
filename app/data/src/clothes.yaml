@@ -1,6 +1,6 @@
 name: 'Одежда'
 words:
-	- hebrew: 'להתלבש'
+    - hebrew: 'להתלבש'
       translit: 'леhитлабеш'
       russian: 'одеваться'
 
