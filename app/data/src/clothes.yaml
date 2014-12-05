@@ -1,0 +1,189 @@
+name: 'Одежда'
+words:
+	- hebrew: 'להתלבש'
+      translit: 'леhитлабеш'
+      russian: 'одеваться'
+
+    - hebrew: 'הוא מתלבש'
+      translit: 'hу митлабеш'
+      russian: 'он одевается'
+
+    - hebrew: 'לִלבּוֹש'
+      translit: 'лильбош'
+      russian: 'надевать'
+
+    - hebrew: 'היא לוֹבֵשֶת'
+      translit: 'hи ловешет'
+      russian: 'она надевает'
+
+    - hebrew: 'בגד'
+      translit: 'бе´гед'
+      russian: 'одежда'
+
+    - hebrew: 'כובע'
+      translit: 'ко´ва'
+      russian: 'шапка'
+
+    - hebrew: 'אוֹזנִיוֹת'
+      translit: 'озниот'
+      russian: 'наушники'
+
+    - hebrew: 'אוֹזֶן'
+      translit: 'о´зэн'
+      russian: 'ухо'
+
+    - hebrew: 'צָעִיף'
+      translit: 'цаиф'
+      russian: 'шарф'
+
+    - hebrew: 'כּפָפָוֹת'
+      translit: 'кфафот'
+      russian: 'перчатки'
+
+    - hebrew: 'מְעִיל'
+      translit: 'меиль'
+      russian: 'куртка, пальто'
+
+    - hebrew: 'מְעִיל פַּרווָה'
+      translit: 'мэиль парва'
+      russian: 'шуба'
+
+    - hebrew: 'פַּרווָה'
+      translit: 'парва'
+      russian: 'мех'
+
+    - hebrew: 'סווֶדֶר'
+      translit: 'свэ´дэр'
+      russian: 'свитер'
+
+    - hebrew: 'מִכנָסַיִים'
+      translit: 'михнасаим'
+      russian: 'брюки, штаны'
+
+    - hebrew: 'חוּלצָה'
+      translit: 'хульца'
+      russian: 'футболка, кофта, блузка'
+
+    - hebrew: 'חֲצָאִית'
+      translit: 'хацаит'
+      russian: 'юбка'
+
+    - hebrew: 'שִׂמלָה'
+      translit: 'симла'
+      russian: 'платье'
+
+    - hebrew: 'חֲלִיפָה'
+      translit: 'халифа'
+      russian: 'мужской костюм'
+
+    - hebrew: 'עֲנִיבָה'
+      translit: 'анива'
+      russian: 'галстук'
+
+    - hebrew: 'חֲגוֹרָה'
+      translit: 'хагора'
+      russian: 'пояс'
+
+    - hebrew: 'גֶרֶב'
+      translit: 'ге´рэв'
+      russian: 'носок'
+
+    - hebrew: 'גַרבַּיִים'
+      translit: 'гарба´йим'
+      russian: 'носки'
+
+    - hebrew: 'גַרבִּיוֹנִים'
+      translit: 'гарбийо´ним'
+      russian: 'колготы'
+
+    - hebrew: 'נַעֲלַיִים'
+      translit: 'наала´им'
+      russian: 'обувь'
+
+    - hebrew: 'סנדלים'
+      translit: 'сандалим'
+      russian: 'сандали'
+
+    - hebrew: 'מַגָפַיִים'
+      translit: 'магафа´им'
+      russian: 'сапоги'
+
+    - hebrew: 'נַעֲלֵי-ספּוֹרט'
+      translit: 'наалэй-спорт'
+      russian: 'кроссовки'
+
+    - hebrew: 'נעלי עקב'
+      translit: 'наалэй акэв'
+      russian: 'обувь на каблуке, туфли'
+
+    - hebrew: 'עֲקֵבִים'
+      translit: 'акэвим'
+      russian: 'каблуки'
+
+    - hebrew: 'נַעֲלֵי בָית'
+      translit: 'наалэй байт'
+      russian: 'домашняя обувь, тапки'
+
+    - hebrew: 'לְבָנִים'
+      translit: 'леваним'
+      russian: 'белье'
+
+    - hebrew: 'גוּפִייָה'
+      translit: 'гуфия'
+      russian: 'майка'
+
+    - hebrew: 'גוּף'
+      translit: 'гуф'
+      russian: 'тело'
+
+    - hebrew: 'תַחתוֹנִים'
+      translit: 'тахтоним'
+      russian: 'трусы'
+
+    - hebrew: 'חזייה'
+      translit: 'хазия'
+      russian: 'бюстгальтер'
+
+    - hebrew: 'תכשיטים'
+      translit: 'тахшитим'
+      russian: 'украшения'
+
+    - hebrew: 'עגילים'
+      translit: 'агилим'
+      russian: 'сережки'
+
+    - hebrew: 'טבעת'
+      translit: 'таба´ат'
+      russian: 'кольцо'
+
+    - hebrew: 'שרשרת'
+      translit: 'шарше´рэт'
+      russian: 'цепочка'
+
+    - hebrew: 'צמיד'
+      translit: 'цамид'
+      russian: 'браслет'
+
+    - hebrew: 'שעון'
+      translit: 'шаон'
+      russian: 'часы'
+
+    - hebrew: 'מִשקָפַיִים'
+      translit: 'мишкафаим'
+      russian: 'очки'
+
+    - hebrew: 'תיק'
+      translit: 'тик'
+      russian: 'сумка'
+
+    - hebrew: 'עם פסים'
+      translit: 'им пасим'
+      russian: 'в полоску'
+
+    - hebrew: 'של מִשבָּצוֹת'
+      translit: 'шель мишбацот'
+      russian: 'клетчатый'
+
+    - hebrew: 'כּוֹכב'
+      translit: 'кохав'
+      russian: 'звезда'

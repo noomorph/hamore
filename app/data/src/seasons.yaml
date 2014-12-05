@@ -123,3 +123,23 @@ words:
     - hebrew: 'שֶעַרַה'
       translit: 'саара'
       russian: 'волосина'
+
+    - hebrew: 'קור'
+      translit: 'кор'
+      russian: 'мороз'
+
+    - hebrew: 'חום'
+      translit: 'хом'
+      russian: 'тепло (сущ.)'
+
+    - hebrew: 'רוח חזקה'
+      translit: 'руах хазака'
+      russian: 'сильный ветер'
+
+    - hebrew: 'רוח חלשה'
+      translit: 'руах халаша'
+      russian: 'слабый ветер'
+
+    - hebrew: 'יורד שלג'
+      translit: 'йоред шелег'
+      russian: 'идет снег'
