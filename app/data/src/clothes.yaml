@@ -187,3 +187,15 @@ words:
     - hebrew: 'כּוֹכב'
       translit: 'кохав'
       russian: 'звезда'
+
+    - hebrew: 'מִבצָע'
+      translit: 'мивца'
+      russian: 'распродажа'
+
+    - hebrew: 'הֲנָחָה'
+      translit: 'hанаха'
+      russian: 'скидка'
+
+    - hebrew: 'חֲנוּת'
+      translit: 'ханут'
+      russian: 'магазин'
