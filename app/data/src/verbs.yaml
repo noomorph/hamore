@@ -1,0 +1,813 @@
+name: "Глаголы"
+words: 
+    - hebrew: "לשמוח"
+      translit: "лисмоах"
+      russian: "радоваться"
+
+    - hebrew: "שמח"
+      translit: "самах"
+      russian: "радовался"
+
+    - hebrew: "שמח"
+      translit: "самеах"
+      russian: "радуется"
+
+    - hebrew: "לשמוע"
+      translit: "лишмоа"
+      russian: "слушать"
+
+    - hebrew: "שמע"
+      translit: "шама"
+      russian: "слушал"
+
+    - hebrew: "שומע"
+      translit: "шомеа"
+      russian: "слушает"
+
+    - hebrew: "לברוח"
+      translit: "ливроах"
+      russian: "сбегать"
+
+    - hebrew: "ברח"
+      translit: "барах"
+      russian: "сбегал"
+
+    - hebrew: "בורח"
+      translit: "борэах"
+      russian: "сбегает"
+
+    - hebrew: "לפתוח"
+      translit: "лифтоах"
+      russian: "открывать"
+
+    - hebrew: "פתח"
+      translit: "патах"
+      russian: "открывал"
+
+    - hebrew: "פותח"
+      translit: "потэах"
+      russian: "открывает"
+
+    - hebrew: "לשכוח"
+      translit: "лишкоах"
+      russian: "забывать"
+
+    - hebrew: "שכח"
+      translit: "щахах"
+      russian: "забывал"
+
+    - hebrew: "שוכח"
+      translit: "шохеах"
+      russian: "забывает"
+
+    - hebrew: "לשלוח"
+      translit: "лишлоах"
+      russian: "посылать"
+
+    - hebrew: "שלח"
+      translit: "шалах"
+      russian: "посылал"
+
+    - hebrew: "שולח"
+      translit: "шолеах"
+      russian: "посылает"
+
+    - hebrew: "לאהוב"
+      translit: "лееhов"
+      russian: "любить"
+
+    - hebrew: "אהב"
+      translit: "аhав"
+      russian: "любил"
+
+    - hebrew: "אוהב"
+      translit: "оhев"
+      russian: "любит"
+
+    - hebrew: "לאכול"
+      translit: "леехоль"
+      russian: "есть (инфинитив)"
+
+    - hebrew: "אכל"
+      translit: "ахаль"
+      russian: "есть (м.р. прош.вр.)"
+
+    - hebrew: "אוכל"
+      translit: "охель"
+      russian: "есть (м.р. наст.вр.)"
+
+    - hebrew: "לומר"
+      translit: "ломар"
+      russian: "сказать"
+
+    - hebrew: "אמר"
+      translit: "амар"
+      russian: "рассказывал"
+
+    - hebrew: "אומר"
+      translit: "омер"
+      russian: "сказать (м.р. наст.вр.)"
+
+    - hebrew: "לבוא"
+      translit: "лаво"
+      russian: "приходить"
+
+    - hebrew: "בא"
+      translit: "ба"
+      russian: "приходил"
+
+    - hebrew: "בא"
+      translit: "ба"
+      russian: "приходит"
+
+    - hebrew: "לבכות"
+      translit: "ливхот"
+      russian: "плакать"
+
+    - hebrew: "בכה"
+      translit: "баха"
+      russian: "плакал"
+
+    - hebrew: "בוכה"
+      translit: "бохе"
+      russian: "плачет"
+
+    - hebrew: "לבנות"
+      translit: "ливнот"
+      russian: "строить"
+
+    - hebrew: "בנה"
+      translit: "бана"
+      russian: "строил"
+
+    - hebrew: "בונה"
+      translit: "бонэ"
+      russian: "строит"
+
+    - hebrew: "לשכב"
+      translit: "лишкав"
+      russian: "лежать"
+
+    - hebrew: "שכב"
+      translit: "шахав"
+      russian: "лежал"
+
+    - hebrew: "שוכב"
+      translit: "шохев"
+      russian: "лежит"
+
+    - hebrew: "לחזוד"
+      translit: "лахзор"
+      russian: "возвращаться"
+
+    - hebrew: "חזר"
+      translit: "хазар"
+      russian: "возвращался"
+
+    - hebrew: "חוזר"
+      translit: "хозэр"
+      russian: "возвращается"
+
+    - hebrew: "לחלום"
+      translit: "лахлом"
+      russian: "мечтать"
+
+    - hebrew: "חלם"
+      translit: "халам"
+      russian: "мечтал"
+
+    - hebrew: "חולם"
+      translit: "холем"
+      russian: "мечтает"
+
+    - hebrew: "לחסוך"
+      translit: "лахсох"
+      russian: "экономить"
+
+    - hebrew: "חסך"
+      translit: "хасам"
+      russian: "экономил"
+
+    - hebrew: "חוסך"
+      translit: "хосэх"
+      russian: "экономит"
+
+    - hebrew: "לחשוב"
+      translit: "лахшов"
+      russian: "думать"
+
+    - hebrew: "חשב"
+      translit: "хашав"
+      russian: "думал"
+
+    - hebrew: "חושב"
+      translit: "хошев"
+      russian: "думает"
+
+    - hebrew: "להיות"
+      translit: "лиhйот"
+      russian: "быть"
+
+    - hebrew: "היה"
+      translit: "hайа"
+      russian: "был"
+
+    - hebrew: "לחיות"
+      translit: "лихйот"
+      russian: "жить"
+
+    - hebrew: "חי"
+      translit: "хай"
+      russian: "жил"
+
+    - hebrew: "חי"
+      translit: "хай"
+      russian: "живет"
+
+    - hebrew: "לתת"
+      translit: "латет"
+      russian: "давать"
+
+    - hebrew: "נתן"
+      translit: "натан"
+      russian: "давал"
+
+    - hebrew: "נותן"
+      translit: "нотэн"
+      russian: "дает"
+
+    - hebrew: "לעשות"
+      translit: "лаасот"
+      russian: "делать"
+
+    - hebrew: "עשה"
+      translit: "аса"
+      russian: "делал"
+
+    - hebrew: "עושה"
+      translit: "осэ"
+      russian: "делает"
+
+    - hebrew: "לענות"
+      translit: "лаанот"
+      russian: "отвечать"
+
+    - hebrew: "ענה"
+      translit: "ана"
+      russian: "отвечал"
+
+    - hebrew: "עונה"
+      translit: "онэ"
+      russian: "отвечает"
+
+    - hebrew: "לעלות"
+      translit: "лаалот"
+      russian: "подниматься"
+
+    - hebrew: "עלה"
+      translit: "ала"
+      russian: "поднимался"
+
+    - hebrew: "עולה"
+      translit: "оле"
+      russian: "поднимается"
+
+    - hebrew: "לעזוב"
+      translit: "лаазов"
+      russian: "покидать"
+
+    - hebrew: "עזב"
+      translit: "азав"
+      russian: "покидал"
+
+    - hebrew: "עוזב"
+      translit: "озэв"
+      russian: "покидает"
+
+    - hebrew: "לעזור"
+      translit: "лаазор"
+      russian: "помогать"
+
+    - hebrew: "עזר"
+      translit: "азар"
+      russian: "помогал"
+
+    - hebrew: "עוזר"
+      translit: "озэр"
+      russian: "помогает"
+
+    - hebrew: "לעמוד"
+      translit: "лаамод"
+      russian: "стоять"
+
+    - hebrew: "עמד"
+      translit: "амад"
+      russian: "стоял"
+
+    - hebrew: "עומד"
+      translit: "омед"
+      russian: "стоит"
+
+    - hebrew: "לעסוק"
+      translit: "лаасок"
+      russian: "заниматься"
+
+    - hebrew: "עסק"
+      translit: "асак"
+      russian: "занимался"
+
+    - hebrew: "עוסק"
+      translit: "осэк"
+      russian: "занимается"
+
+    - hebrew: "לעצור"
+      translit: "лаацор"
+      russian: "останавливать"
+
+    - hebrew: "עצר"
+      translit: "ацар"
+      russian: "остановился"
+
+    - hebrew: "עוצר"
+      translit: "оцер"
+      russian: "останавливается"
+
+    - hebrew: "לקנות"
+      translit: "ликнот"
+      russian: "покупать"
+
+    - hebrew: "קנה"
+      translit: "кана"
+      russian: "купил"
+
+    - hebrew: "קונה"
+      translit: "конэ"
+      russian: "покупает"
+
+    - hebrew: "לקרות"
+      translit: "ликрот"
+      russian: "случаться"
+
+    - hebrew: "קרה"
+      translit: "кара"
+      russian: "случился (произошел)"
+
+    - hebrew: "קורה"
+      translit: "корэ"
+      russian: "случается (происходит)"
+
+    - hebrew: "לשתות"
+      translit: "лиштот"
+      russian: "пить"
+
+    - hebrew: "שתה"
+      translit: "шата"
+      russian: "пил"
+
+    - hebrew: "שותה"
+      translit: "шотэ"
+      russian: "пьет"
+
+    - hebrew: "לרצות"
+      translit: "лирцот"
+      russian: "хотеть"
+
+    - hebrew: "רצה"
+      translit: "раца"
+      russian: "хотел"
+
+    - hebrew: "רוצה"
+      translit: "роцэ"
+      russian: "хочет"
+
+    - hebrew: "לשוב"
+      translit: "лашув"
+      russian: "вернуться"
+
+    - hebrew: "שב"
+      translit: "шав"
+      russian: "вернулся"
+
+    - hebrew: "שב"
+      translit: "шав"
+      russian: "вернуться ( м.р.)"
+
+    - hebrew: "לגור"
+      translit: "лагур"
+      russian: "жить"
+
+    - hebrew: "גר"
+      translit: "гар"
+      russian: "жил"
+
+    - hebrew: "גר"
+      translit: "гар"
+      russian: "живет"
+
+    - hebrew: "לזוז"
+      translit: "лазуз"
+      russian: "двигаться"
+
+    - hebrew: "זז"
+      translit: "заз"
+      russian: "двигался"
+
+    - hebrew: "זז"
+      translit: "заз"
+      russian: "двигается"
+
+    - hebrew: "לקום"
+      translit: "лакум"
+      russian: "вставать"
+
+    - hebrew: "קם"
+      translit: "кам"
+      russian: "вставал"
+
+    - hebrew: "קם"
+      translit: "кам"
+      russian: "встает"
+
+    - hebrew: "לרוץ"
+      translit: "ларуц"
+      russian: "бежать"
+
+    - hebrew: "רץ"
+      translit: "рац"
+      russian: "бежал"
+
+    - hebrew: "רץ"
+      translit: "рац"
+      russian: "бежит"
+
+    - hebrew: "לעוף"
+      translit: "лауф"
+      russian: "летать"
+
+    - hebrew: "עף"
+      translit: "аф"
+      russian: "летал"
+
+    - hebrew: "עף"
+      translit: "аф"
+      russian: "летает"
+
+    - hebrew: "לנוח"
+      translit: "лануах"
+      russian: "отдыхать"
+
+    - hebrew: "נח"
+      translit: "нах"
+      russian: "отдыхал"
+
+    - hebrew: "נח"
+      translit: "нах"
+      russian: "отдыхает"
+
+    - hebrew: "לנוע"
+      translit: "лануа"
+      russian: "двигаться"
+
+    - hebrew: "נע"
+      translit: "на"
+      russian: "двигался"
+
+    - hebrew: "נע"
+      translit: "на"
+      russian: "двигается"
+
+    - hebrew: "לריב"
+      translit: "ларив"
+      russian: "ссориться"
+
+    - hebrew: "רב"
+      translit: "рав"
+      russian: "ссорился"
+
+    - hebrew: "רב"
+      translit: "рав"
+      russian: "ссорится"
+
+    - hebrew: "לשים"
+      translit: "ласим"
+      russian: "класть"
+
+    - hebrew: "שם"
+      translit: "сам"
+      russian: "клал"
+
+    - hebrew: "שם"
+      translit: "сам"
+      russian: "кладет"
+
+    - hebrew: "לשיר"
+      translit: "лашир"
+      russian: "петь"
+
+    - hebrew: "שר"
+      translit: "шар"
+      russian: "пел"
+
+    - hebrew: "שר"
+      translit: "шар"
+      russian: "поет"
+
+    - hebrew: "ללכת"
+      translit: "лалехет"
+      russian: "идти"
+
+    - hebrew: "הלך"
+      translit: "hалах"
+      russian: "шел"
+
+    - hebrew: "הולך"
+      translit: "hолех"
+      russian: "идет"
+
+    - hebrew: "לדעת"
+      translit: "ладаат"
+      russian: "знать"
+
+    - hebrew: "ידע"
+      translit: "яда"
+      russian: "знал"
+
+    - hebrew: "יודע"
+      translit: "йодэа"
+      russian: "знает"
+
+    - hebrew: "לגעת"
+      translit: "лагаат"
+      russian: "трогать"
+
+    - hebrew: "נגע"
+      translit: "нага"
+      russian: "трогал"
+
+    - hebrew: "נוגע"
+      translit: "ногеа"
+      russian: "трогает"
+
+    - hebrew: "לקחת"
+      translit: "лакахат"
+      russian: "брать"
+
+    - hebrew: "לקח"
+      translit: "лаках"
+      russian: "брал"
+
+    - hebrew: "לוקח"
+      translit: "локеах"
+      russian: "берет"
+
+    - hebrew: "לישון"
+      translit: "лишон"
+      russian: "спать"
+
+    - hebrew: "ישן"
+      translit: "яшан"
+      russian: "спал"
+
+    - hebrew: "ישו"
+      translit: "яшан"
+      russian: "спит"
+
+    - hebrew: "לדאוג"
+      translit: "лидъог"
+      russian: "беспокоиться"
+
+    - hebrew: "דאג"
+      translit: "дааг"
+      russian: "беспокоился"
+
+    - hebrew: "דואג"
+      translit: "доэг"
+      russian: "беспокоится"
+
+    - hebrew: "לשאול"
+      translit: "лишълоль"
+      russian: "спрашивать"
+
+    - hebrew: "שאל"
+      translit: "шааль"
+      russian: "спрашивал"
+
+    - hebrew: "שואל"
+      translit: "шоэль"
+      russian: "спрашивает"
+
+    - hebrew: "לכאוב"
+      translit: "лихъов"
+      russian: "болеть (о какой-то части тела)"
+
+    - hebrew: "כאב"
+      translit: "каав"
+      russian: "болел (о какой-то части тела)"
+
+    - hebrew: "כואב"
+      translit: "коэв"
+      russian: "болит (о какой-то части тела)"
+
+    - hebrew: "ליפול"
+      translit: "липоль"
+      russian: "падать"
+
+    - hebrew: "נפל"
+      translit: "нафаль"
+      russian: "падал"
+
+    - hebrew: "נופל"
+      translit: "нофель"
+      russian: "падает"
+
+    - hebrew: "לכעוס"
+      translit: "лихъос"
+      russian: "сердиться"
+
+    - hebrew: "כעס"
+      translit: "каас"
+      russian: "сердился"
+
+    - hebrew: "כועס"
+      translit: "коэс"
+      russian: "сердится"
+
+    - hebrew: "לצעוק"
+      translit: "лицъок"
+      russian: "кричать"
+
+    - hebrew: "צעק"
+      translit: "цаак"
+      russian: "кричал"
+
+    - hebrew: "צועק"
+      translit: "цоэк"
+      russian: "кричит"
+
+    - hebrew: "לסעום"
+      translit: "литьом"
+      russian: "пробовать (на вкус)"
+
+    - hebrew: "טעם"
+      translit: "таам"
+      russian: "пробовал (на вкус)"
+
+    - hebrew: "טועם"
+      translit: "тоэм"
+      russian: "пробует (на вкус)"
+
+    - hebrew: "לטעות"
+      translit: "литьот"
+      russian: "ошибаться"
+
+    - hebrew: "טעה"
+      translit: "таа"
+      russian: "ошибался"
+
+    - hebrew: "טועה"
+      translit: "тоэ"
+      russian: "ошибается"
+
+    - hebrew: "למצוא"
+      translit: "лимцо"
+      russian: "находить"
+
+    - hebrew: "מצא"
+      translit: "маца"
+      russian: "находил"
+
+    - hebrew: "מוצא"
+      translit: "моце"
+      russian: "находит"
+
+    - hebrew: "לקרוא"
+      translit: "ликро"
+      russian: "читать"
+
+    - hebrew: "קרא"
+      translit: "кара"
+      russian: "читал"
+
+    - hebrew: "קורא"
+      translit: "корэ"
+      russian: "читает"
+
+    - hebrew: "לקרוא"
+      translit: "ликро"
+      russian: "звать"
+
+    - hebrew: "קרא"
+      translit: "кара"
+      russian: "звал"
+
+    - hebrew: "קורא"
+      translit: "корэ"
+      russian: "зовет"
+
+    - hebrew: "לראות"
+      translit: "лиръот"
+      russian: "видеть"
+
+    - hebrew: "ראה"
+      translit: "раа"
+      russian: "видел"
+
+    - hebrew: "רואה"
+      translit: "роэ"
+      russian: "видит"
+
+    - hebrew: "לנגוע"
+      translit: "лингоа"
+      russian: "трогать"
+
+    - hebrew: "נגע"
+      translit: "нага"
+      russian: "трогал"
+
+    - hebrew: "נוגע"
+      translit: "ногеа"
+      russian: "трогает"
+
+    - hebrew: "לנסוע"
+      translit: "линсоа"
+      russian: "ехать"
+
+    - hebrew: "נסע"
+      translit: "наса"
+      russian: "ехал"
+
+    - hebrew: "נוסע"
+      translit: "носэа"
+      russian: "едет"
+
+    - hebrew: "לעבוד"
+      translit: "лаавод"
+      russian: "работать"
+
+    - hebrew: "עבד"
+      translit: "авад"
+      russian: "работал"
+
+    - hebrew: "עובד"
+      translit: "овед"
+      russian: "работает"
+
+    - hebrew: "לעבור"
+      translit: "лаавор"
+      russian: "перейти (через что-либо)"
+
+    - hebrew: "עבר"
+      translit: "авар"
+      russian: "переходил (через что-либо)"
+
+    - hebrew: "עובר"
+      translit: "овер"
+      russian: "переходит (через что-либо)"
+
+    - hebrew: "לצאת"
+      translit: "лацет"
+      russian: "выходить"
+
+    - hebrew: "יצא"
+      translit: "яца"
+      russian: "вышел"
+
+    - hebrew: "יוצא"
+      translit: "йоце"
+      russian: "выходит"
+
+    - hebrew: "לשבת"
+      translit: "лашевет"
+      russian: "сидеть"
+
+    - hebrew: "ישב"
+      translit: "яшав"
+      russian: "сидел"
+
+    - hebrew: "יושב"
+      translit: "йошев"
+      russian: "сидит"
+
+    - hebrew: "לרדת"
+      translit: "ларедет"
+      russian: "спускаться"
+
+    - hebrew: "ירד"
+      translit: "ярад"
+      russian: "спускался"
+
+    - hebrew: "יורד"
+      translit: "йоред"
+      russian: "спускается"
+
+    - hebrew: "לקרוע"
+      translit: "ликроа"
+      russian: "рвать"
+
+    - hebrew: "קרע"
+      translit: "кара"
+      russian: "рвал"
+
+    - hebrew: "קורע"
+      translit: "корэа"
+      russian: "рвет"

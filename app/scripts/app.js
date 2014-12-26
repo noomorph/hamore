@@ -3,6 +3,16 @@ define(['chat', 'chatHistory', 'lesson', 'phraseBook', 'data', 'view', 'hamore']
         'use strict';
 
         function App() {
+            if (window.applicationCache) {
+                window.applicationCache.addEventListener('updateready', function() {
+                    if (window.applicationCache.status === window.applicationCache.UPDATEREADY) {
+                        if (window.confirm('Доступно обновление. Установить?')) {
+                            window.applicationCache.swapCache();
+                            window.location.reload();
+                        }
+                    }
+                }, false);
+            }
         }
 
         App.prototype.start = function () {
