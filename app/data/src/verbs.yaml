@@ -156,7 +156,7 @@ words:
       translit: "шохев"
       russian: "лежит"
 
-    - hebrew: "לחזוד"
+    - hebrew: "לחזור"
       translit: "лахзор"
       russian: "возвращаться"
 
@@ -568,8 +568,8 @@ words:
       translit: "яшан"
       russian: "спал"
 
-    - hebrew: "ישו"
-      translit: "яшан"
+    - hebrew: "ישן"
+      translit: "яшен"
       russian: "спит"
 
     - hebrew: "לדאוג"
