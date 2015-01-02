@@ -185,7 +185,7 @@ words:
       russian: "экономить"
 
     - hebrew: "חסך"
-      translit: "хасам"
+      translit: "хасах"
       russian: "экономил"
 
     - hebrew: "חוסך"
@@ -390,15 +390,15 @@ words:
 
     - hebrew: "לגור"
       translit: "лагур"
-      russian: "жить"
+      russian: "проживать"
 
     - hebrew: "גר"
       translit: "гар"
-      russian: "жил"
+      russian: "проживает"
 
     - hebrew: "גר"
       translit: "гар"
-      russian: "живет"
+      russian: "проживал"
 
     - hebrew: "לזוז"
       translit: "лазуз"
@@ -640,7 +640,7 @@ words:
       translit: "цоэк"
       russian: "кричит"
 
-    - hebrew: "לסעום"
+    - hebrew: "לטעום"
       translit: "литьом"
       russian: "пробовать (на вкус)"
 
