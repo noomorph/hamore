@@ -86,27 +86,27 @@ words:
 
     - hebrew: "לאכול"
       translit: "леехоль"
-      russian: "есть (инфинитив)"
+      russian: "кушать"
 
     - hebrew: "אכל"
       translit: "ахаль"
-      russian: "есть (м.р. прош.вр.)"
+      russian: "кушал"
 
     - hebrew: "אוכל"
       translit: "охель"
-      russian: "есть (м.р. наст.вр.)"
+      russian: "кушает"
 
     - hebrew: "לומר"
       translit: "ломар"
-      russian: "сказать"
+      russian: "говорить"
 
     - hebrew: "אמר"
       translit: "амар"
-      russian: "рассказывал"
+      russian: "говорил"
 
     - hebrew: "אומר"
       translit: "омер"
-      russian: "сказать (м.р. наст.вр.)"
+      russian: "говорит"
 
     - hebrew: "לבוא"
       translit: "лаво"
@@ -387,10 +387,6 @@ words:
     - hebrew: "שב"
       translit: "шав"
       russian: "вернулся"
-
-    - hebrew: "שב"
-      translit: "шав"
-      russian: "вернуться ( м.р.)"
 
     - hebrew: "לגור"
       translit: "лагур"
@@ -758,7 +754,7 @@ words:
 
     - hebrew: "עבר"
       translit: "авар"
-      russian: "переходил (через что-либо)"
+      russian: "перешел (через что-либо)"
 
     - hebrew: "עובר"
       translit: "овер"
@@ -794,7 +790,7 @@ words:
 
     - hebrew: "ירד"
       translit: "ярад"
-      russian: "спускался"
+      russian: "спустился"
 
     - hebrew: "יורד"
       translit: "йоред"
@@ -806,7 +802,7 @@ words:
 
     - hebrew: "קרע"
       translit: "кара"
-      russian: "рвал"
+      russian: "разорвал"
 
     - hebrew: "קורע"
       translit: "корэа"
